@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+.container{
+    display: block;
+    display: grid;
+    grid-template-columns: repeat(3, 356px);
+    grid-auto-rows: minmax(454px, auto);
+    grid-column-gap: 110px;
+    grid-row-gap: 24px;
+    justify-content: center;
+    padding-bottom: 24px;
+}
+
+.text{
+    font-family: 'Itim', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 29px;
+    margin-top: 60px;
+
+    color: #FFF5F5;
+}
+
+.desc{
+    font-family: 'Itim', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    margin-top: 18px;
+
+
+    color: #FFF9F9;
+}
+
+.border{
+    border: 1px solid #BE9E9E;
+}
+
+.btn{
+    background: rgba(168, 106, 106, 0.35);
+    border: 1px solid #BE9E9E;
+    border-radius: 12px;
+    font-family: 'Itim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    /* identical to box height */
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 48px;
+    padding-right: 48px;
+    cursor: pointer;
+    margin-top: 32px;
+
+
+    color: #FFF5F5;
+}
+
+.btn:hover{
+    background: white;
+    color: black;
+}
+
+@media only screen and (max-width: 1000px){
+    .card{
+        display: block;
+        grid-template-columns:100px;
+        grid-column-start: 1;
+        /* grid-column-end: -1; */
+        /* background: yellow; */
+      
+
+    }
+    .container{
+        grid-template-columns: 336px;
+    }
+}

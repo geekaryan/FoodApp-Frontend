@@ -1,0 +1,10 @@
+.card{
+    background: linear-gradient(181.88deg, rgba(40, 21, 21, 0.71) 31.54%, rgba(40, 18, 18, 0.639) 45.7%, rgba(0, 0, 0, 0.574738) 62.74%, rgba(46, 5, 5, 0.418582) 95.51%, rgba(25, 19, 19, 0.426) 113.07%);
+    padding-bottom: 40px;
+    padding-top: 40px;
+    padding-left: 45px;
+    padding-right: 45px;
+    border: 2px solid rgba(143, 188, 116, 0.56);
+   border-radius: 20px;  
+
+}

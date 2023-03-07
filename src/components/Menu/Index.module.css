@@ -1,0 +1,9 @@
+.container{
+    background: linear-gradient(
+        180.31deg,
+        #443F3F 1%,
+        #0E0707 99.83%
+      );
+      background-attachment: fixed;
+    height: auto;
+}

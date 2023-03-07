@@ -1,0 +1,9 @@
+.container{
+    background-image: url('./../../assets/Home.png');
+    height: 100vh;
+    background-repeat: repeat-x repeat-y;
+    background-position: center;
+    width: auto;
+    
+}
+

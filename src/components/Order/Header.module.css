@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+.container{
+    text-align: center;
+    font-family: 'Itim', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 77px;
+    padding-top: 60px;
+    margin-bottom: 34px;
+
+    color: #FFF9F9;
+}
