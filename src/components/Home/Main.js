@@ -1,14 +1,30 @@
 import { Link } from "react-router-dom";
-
-import chef from "./../../assets/chef.png";
+import Slider from "./../../UI/Coursel";
 import arrow from "./../../assets/arrow.png";
 import styles from "./Main.module.css";
+import chef1 from "./../../assets/chef.png";
+import chef2 from "./../../assets/chef2main.png";
+import chef3 from "./../../assets/chef3main.png";
 
 const Main = () => {
+  const slides = [
+    {
+      image: chef1,
+      title: "chef1",
+    },
+    {
+      image: chef2,
+      title: "chef3",
+    },
+    {
+      image: chef3,
+      title: "chef2",
+    },
+  ];
   return (
     <div className={styles.container}>
-      <div>
-        <img src={chef} alt="chef" />
+      <div className={styles.slider}>
+        <Slider slides={slides} />
       </div>
       <div>
         <div className={styles.text}>

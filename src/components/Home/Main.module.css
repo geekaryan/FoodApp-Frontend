@@ -40,3 +40,10 @@
 .img{
     margin-left: 12px;
 }
+
+
+.slider{
+    width:1000px;
+    height: 600px;
+    /* border-radius: 8px; */
+}
