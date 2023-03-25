@@ -1,16 +1,37 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home/Home";
-import Menu from "./components/Menu/Index";
 import Order from "./components/Order/Index";
+import MenuPage from "./pages/Menupage";
+import MenuDetailpage, { loader as DeatilLoader } from "./pages/MenuDetailpage";
+import EventRootLayout from "./pages/EventRoot";
+import RootLayout from "./pages/Root";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/menu",
-    element: <Menu />,
+    element: <RootLayout />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "menu",
+        element: <EventRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <MenuPage />,
+          },
+          {
+            path: ":id",
+            id: "id",
+            element: <MenuDetailpage />,
+            loader: DeatilLoader,
+          },
+        ],
+      },
+    ],
   },
   {
     path: "/order",
