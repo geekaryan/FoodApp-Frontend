@@ -13,7 +13,7 @@ const Index = ({ data }) => {
       <div>
         {data.map((menu) => (
           <Link to={menu._id}>
-            <Item key={`/menu/${menu._id}`} menu={menu} />
+            <Item key={menu._id} menu={menu} />
           </Link>
         ))}
       </div>
