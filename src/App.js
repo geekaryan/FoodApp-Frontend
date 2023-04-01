@@ -5,6 +5,7 @@ import MenuPage from "./pages/Menupage";
 import MenuDetailpage, { loader as DeatilLoader } from "./pages/MenuDetailpage";
 import EventRootLayout from "./pages/EventRoot";
 import RootLayout from "./pages/Root";
+import LoginPage from "./pages/LoginPage";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: "/order",
     element: <Order />,
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
   },
 ]);
 
