@@ -1,9 +1,14 @@
 .container{
-    background-image: url('./../../assets/Home.png');
-    height: 100vh;
-    background-repeat: repeat-x repeat-y;
-    background-position: center;
-    width: auto;
+    background: linear-gradient(105.96deg, #FFC26B -6.45%, #FF8D8E 109.09%);
+    height: 130vh;
     
 }
 
+.semicontainer{
+    background: #FFFFFF;
+    border-radius: 2px;
+    height: 125vh;
+    margin-right: 50px;
+    margin-bottom: 56px;
+    padding-bottom: 32px;
+}

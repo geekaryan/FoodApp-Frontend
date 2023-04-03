@@ -23,9 +23,6 @@ const Main = () => {
   ];
   return (
     <div className={styles.container}>
-      <div className={styles.slider}>
-        <Slider slides={slides} />
-      </div>
       <div>
         <div className={styles.text}>
           <span>THE TASTE YOU NEED THE TASTE YOU GET.</span>
@@ -40,6 +37,9 @@ const Main = () => {
             </button>
           </Link>
         </div>
+      </div>
+      <div className={styles.slider}>
+        <Slider slides={slides} />
       </div>
     </div>
   );

@@ -5,11 +5,13 @@ import Main from "./Main";
 const Home = () => {
   return (
     <div className={styles.container}>
-      <div>
-        <Header />
-      </div>
-      <div>
-        <Main />
+      <div className={styles.semicontainer}>
+        <div>
+          <Header />
+        </div>
+        <div>
+          <Main />
+        </div>
       </div>
     </div>
   );
