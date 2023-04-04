@@ -102,7 +102,6 @@ const Function = () => {
           </div>
         </div>
       </div>
-      )
     </div>
   );
 };

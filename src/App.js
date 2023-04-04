@@ -6,6 +6,7 @@ import MenuDetailpage, { loader as DeatilLoader } from "./pages/MenuDetailpage";
 import EventRootLayout from "./pages/EventRoot";
 import RootLayout from "./pages/Root";
 import LoginPage from "./pages/LoginPage";
+import AboutPage from "./pages/Aboutpage";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <LoginPage />,
+  },
+  {
+    path: "/about",
+    element: <AboutPage />,
   },
 ]);
 
