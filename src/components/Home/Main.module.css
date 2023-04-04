@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@700&display=swap');
 
 .container{
     padding-top: 1rem;
@@ -22,22 +23,21 @@
 }
 
 .btn{
-    background: rgba(155, 81, 81, 0.66);
-    border-radius: 13px;
-    border: none;
-    padding-top: 27px;
-    padding-bottom: 27px;
-    padding-left: 35px;
-    padding-right: 35px;
-    font-family: 'Itim', cursive;
+    background: #DA2D2D;
+    border-radius: 94px;
+    font-family: 'Baloo Da 2', cursive;
     font-style: normal;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 38px;
-    color: white;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 59px;
     display: flex;
     align-items: center;
-    margin-top: 36px;
+    letter-spacing: -0.035em;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 60px;
+    color: #000000;
+    border: none;
 }
 
 .img{
@@ -46,8 +46,8 @@
 
 
 .slider{
-    width:500px;
-    height: 500px;
+    width:508px;
+    height: 374px;
     /* border-radius: 8px; */
 }
 
@@ -64,4 +64,25 @@
     width: 512px;
 
     color: #000000;
+}
+
+.outermost{
+    background: rgba(255, 205, 27, 0.26);
+    border-radius: 24px;
+    padding-top: 42px;
+    width: 500px;
+    height: 373.95px;
+    position: relative;
+    padding-left: 36px;
+}
+
+.innermost{
+    background: rgba(255, 205, 27, 0.85);
+    width: 450px;
+    border-radius: 24px;
+    padding-left: 78px;
+    padding-top: 40px;
+    position: absolute;
+    z-index: 1;
+    height: 360px;
 }

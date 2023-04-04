@@ -1,13 +1,18 @@
 import { Link } from "react-router-dom";
 import Slider from "./../../UI/Coursel";
-import arrow from "./../../assets/arrow.png";
+// import arrow from "./../../assets/arrow.png";
 import styles from "./Main.module.css";
 import chef1 from "./../../assets/chef.png";
 import chef2 from "./../../assets/chef2main.png";
 import chef3 from "./../../assets/chef3main.png";
+import cs from "./../../assets/cs.png";
 
 const Main = () => {
   const slides = [
+    {
+      image: cs,
+      title: "cs",
+    },
     {
       image: chef1,
       title: "chef1",
@@ -50,14 +55,16 @@ const Main = () => {
         </div>
         <div>
           <Link to="/menu" style={{ textDecoration: "none" }}>
-            <button className={styles.btn}>
-              Order Now <img src={arrow} className={styles.img} alt="arrow" />{" "}
-            </button>
+            <button className={styles.btn}>Order Here</button>
           </Link>
         </div>
       </div>
-      <div className={styles.slider}>
-        <Slider slides={slides} />
+      <div className={styles.outermost}>
+        <div className={styles.innermost}>
+          <div className={styles.slider}>
+            <Slider slides={slides} />
+          </div>
+        </div>
       </div>
     </div>
   );
