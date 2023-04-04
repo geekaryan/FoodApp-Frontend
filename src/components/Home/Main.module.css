@@ -1,21 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
 .container{
     padding-top: 1rem;
-    margin-left: 140px;
+    margin-left: 106px;
    display: flex;
    align-items: center;
-   gap: 124px;
+   /* gap: 124px; */
+   gap: 170px;
    
 }
 
 
 .text{
-    font-family: 'Itim', cursive;
+    font-family: 'Courgette', cursive;
     font-style: normal;
     font-weight: 400;
-    font-size: 64px;
-    line-height: 77px;
+    font-size: 85px;
+    line-height: 106px;
+    letter-spacing: -0.015em;
 }
 
 .btn{
@@ -34,7 +37,7 @@
     color: white;
     display: flex;
     align-items: center;
-    margin-top: 86px;
+    margin-top: 36px;
 }
 
 .img{
@@ -43,7 +46,22 @@
 
 
 .slider{
-    width:1000px;
-    height: 600px;
+    width:500px;
+    height: 500px;
     /* border-radius: 8px; */
+}
+
+.longtext{
+    margin-top: 40px;
+    font-family: 'Courgette', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 31px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.035em;
+    width: 512px;
+
+    color: #000000;
 }
