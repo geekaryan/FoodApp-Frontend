@@ -7,6 +7,7 @@ import EventRootLayout from "./pages/EventRoot";
 import RootLayout from "./pages/Root";
 import LoginPage from "./pages/LoginPage";
 import AboutPage from "./pages/Aboutpage";
+import MobileTest from "./pages/Mobiletest";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
   {
     path: "/about",
     element: <AboutPage />,
+  },
+  {
+    path: "/mobile",
+    element: <MobileTest />,
   },
 ]);
 
