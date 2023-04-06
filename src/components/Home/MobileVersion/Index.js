@@ -1,5 +1,6 @@
 import Header from "./Header";
 import Text from "./Text";
+import Item from "./Items";
 
 const Index = () => {
   return (
@@ -9,6 +10,9 @@ const Index = () => {
       </div>
       <div>
         <Text />
+      </div>
+      <div>
+        <Item />
       </div>
     </div>
   );
