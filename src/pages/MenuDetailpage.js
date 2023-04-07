@@ -1,6 +1,6 @@
 import { useLoaderData, json } from "react-router-dom";
 
-import Menu from "./../components/Menu/Menu";
+import Menu from "./../components/Menu/MenuDetail/Index";
 const MenuDetailpage = () => {
   const data = useLoaderData();
   console.log(data.data);

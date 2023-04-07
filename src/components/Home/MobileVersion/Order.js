@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import styles from "./Order.module.css";
 
 const Order = () => {
@@ -10,7 +12,9 @@ const Order = () => {
         </span>
       </div>
       <div>
-        <button className={styles.btn}>Order Here</button>
+        <Link to="/menu">
+          <button className={styles.btn}>Order Here</button>
+        </Link>
       </div>
     </div>
   );

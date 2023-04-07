@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Imprima&display=swap');
+
+.container{
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.name{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 65px;
+    line-height: 79px;
+    border-bottom:1px solid black ;
+    padding-bottom: 16px;
+    margin-bottom: 26px;
+    color: #000000;
+}
+
+.img{
+    margin-left: 100px;
+}
+
+.item{
+    font-family: 'Imprima', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 41px;
+
+    color: #000000;
+
+}
