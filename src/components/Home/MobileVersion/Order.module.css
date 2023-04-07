@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@700&display=swap');
+
+@media only screen and (max-width: 1000px)
+{
+    .bg{
+    background: linear-gradient(180deg, #FF4747 0%, #FFD789 100%);
+    /* filter: blur(1px); */
+    position: absolute;
+    z-index: 1;
+    margin-top: 4rem;
+    height: 35vh;
+
+    }
+    .text{
+        filter: blur(0px);
+        position: relative;
+        font-family: 'Courgette';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 31px;
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.035em;
+        margin-left: 30px;
+        margin-right: 30px;
+        text-align: center;
+        color: #000000;
+        margin-top: 35px;
+       
+    }
+    .btn{
+    font-family: 'Baloo Da 2', cursive;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.035em;
+    background: #DA2D2D;
+    border-radius: 94px;
+    color: #000000;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 40px;
+   
+    }
+}
+
+@media only screen and (max-width: 420px)
+{
+    .bg{
+    background: linear-gradient(180deg, #FF4747 0%, #FFD789 100%);
+    /* filter: blur(1px); */
+    position: absolute;
+    z-index: 1;
+    margin-top: 4rem;
+    height: 35vh;
+
+    }
+    .text{
+        filter: blur(0px);
+        position: relative;
+        font-family: 'Courgette';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 31px;
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.035em;
+        margin-left: 30px;
+        margin-right: 30px;
+        text-align: center;
+        color: #000000;
+        margin-top: 35px;
+       
+    }
+    .btn{
+    font-family: 'Baloo Da 2', cursive;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.035em;
+    background: #DA2D2D;
+    border-radius: 94px;
+    color: #000000;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 40px;
+   
+    }
+}
+
+
+@media only screen and (max-width: 380px)
+{
+    .bg{
+        height: 50vh;
+    }
+}

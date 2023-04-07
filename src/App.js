@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./components/Home/Home";
+import Home from "./pages/Home";
 import Order from "./components/Order/Index";
 import MenuPage from "./pages/Menupage";
 import MenuDetailpage, { loader as DeatilLoader } from "./pages/MenuDetailpage";
