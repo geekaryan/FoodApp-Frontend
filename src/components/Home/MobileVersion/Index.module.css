@@ -1,9 +1,2 @@
-@media only screen and (max-width: 420px)
-{
-    .bg{
-    background: linear-gradient(180deg, #FF4747 0%, #FFD789 100%);
-    filter: blur(1px);
-    position: relative;
-    }
-}
+
 
