@@ -34,7 +34,9 @@ const Header = () => {
         </Link>
 
         <div className={styles.text}>
-          <span>About Us</span>
+          <Link to="/about" style={{ textDecoration: "none", color: "black" }}>
+            <span>About Us</span>
+          </Link>
         </div>
         <div>
           <img src={user} alt="user" />

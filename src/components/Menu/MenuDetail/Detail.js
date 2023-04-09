@@ -6,9 +6,15 @@ const Detail = ({ data }) => {
   console.log(data);
   return (
     <div className={styles.container}>
-      <div className={styles.img}>
-        <img src={burger} alt="burger" />
+      <div className={styles.imageContainer}>
+        <div className={styles.img}>
+          <img src={burger} alt="burger" />
+        </div>
+        <div className={styles.price}>
+          <span>₹ {data.ratings}</span>
+        </div>
       </div>
+
       <div>
         <div className={styles.name}>
           <span>{data.name}</span>

@@ -1,5 +1,6 @@
 // import { useParams } from "react-router-dom";
 import Detail from "./Detail";
+import Feedback from "./Feedback";
 
 const Index = ({ data }) => {
   //   const params = useParams();
@@ -7,7 +8,12 @@ const Index = ({ data }) => {
     <div>
       {/* {params.id} */}
       {/* {data.name} */}
-      <Detail data={data} />
+      <div>
+        <Detail data={data} />
+      </div>
+      <div>
+        <Feedback />
+      </div>
     </div>
   );
 };
