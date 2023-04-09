@@ -33,3 +33,30 @@
     color: #000000;
 
 }
+
+.ratingDiv{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 38px;
+}
+
+.rtext{
+    font-family: 'Imprima', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 41px;
+
+    color: #EBC80F;
+}
+
+.ntext{
+    font-family: 'Imprima', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 41px;
+
+    color: #000000;
+}

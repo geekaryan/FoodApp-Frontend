@@ -1,3 +1,4 @@
+import ReactStars from "react-rating-stars-component";
 import burger from "./../../../assets/burgerdetail.png";
 import styles from "./Detail.module.css";
 
@@ -24,6 +25,22 @@ const Detail = ({ data }) => {
           </div>
           <div>
             <span>Pickle: {data.name}</span>
+          </div>
+        </div>
+        <div className={styles.ratingDiv}>
+          <div>
+            {" "}
+            <span className={styles.rtext}>Ratings</span>{" "}
+            <span className={styles.ntext}>: {data.ratings}</span>{" "}
+          </div>
+          <div>
+            <ReactStars
+              value={data.ratings}
+              count={5}
+              size={100}
+              isHalf={true}
+              activeColor="#ffd700"
+            />
           </div>
         </div>
       </div>
