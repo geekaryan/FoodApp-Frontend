@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
 
-import Heading from "./Heading";
 import Item from "./Item";
 import styles from "./Index.module.css";
 
 const Index = ({ data }) => {
   return (
-    <div className={styles.container}>
-      <div>
-        <Heading />
+    <div>
+      <div className={styles.srcDiv}>
+        <input
+          type="text"
+          placeholder="Search food items.."
+          className={styles.searchinput}
+        />
       </div>
       <div>
         {data.map((menu) => (

@@ -6,21 +6,23 @@ const Item = ({ menu }) => {
   // console.log(menu.name);
 
   return (
-    <div className={styles.container}>
-      <Card className={styles.card}>
-        <div>
-          <img src={burger} alt="item" />
-        </div>
-        <div className={styles.text}>
-          <span>{menu.name}</span>
-        </div>
-        <div className={styles.desc}>
-          <span>{menu.description}</span>
-        </div>
-        <div>
-          <button className={styles.btn}>Add to Cart</button>
-        </div>
-      </Card>
+    <div>
+      <div className={styles.container}>
+        {/* <Card className={styles.card}>
+          <div>
+            <img src={burger} alt="item" />
+          </div>
+          <div className={styles.text}>
+            <span>{menu.name}</span>
+          </div>
+          <div className={styles.desc}>
+            <span>{menu.description}</span>
+          </div>
+          <div>
+            <button className={styles.btn}>Add to Cart</button>
+          </div>
+        </Card> */}
+      </div>
     </div>
   );
 };
