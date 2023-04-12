@@ -8,7 +8,7 @@ const Item = ({ menu }) => {
   return (
     <div>
       <div className={styles.container}>
-        {/* <Card className={styles.card}>
+        <Card className={styles.card}>
           <div>
             <img src={burger} alt="item" />
           </div>
@@ -21,7 +21,7 @@ const Item = ({ menu }) => {
           <div>
             <button className={styles.btn}>Add to Cart</button>
           </div>
-        </Card> */}
+        </Card>
       </div>
     </div>
   );

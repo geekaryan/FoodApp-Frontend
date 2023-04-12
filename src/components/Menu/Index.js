@@ -13,12 +13,16 @@ const Index = ({ data }) => {
           className={styles.searchinput}
         />
       </div>
-      <div>
-        {data.map((menu) => (
-          <Link to={menu._id}>
-            <Item key={menu._id} menu={menu} />
-          </Link>
-        ))}
+      <div className={styles.apiContainer}>
+        {data.map((menu) => {
+          return (
+            <div>
+              <Link to={menu._id}>
+                <div>{menu.name}</div>
+              </Link>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

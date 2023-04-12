@@ -26,3 +26,8 @@
   margin-top: 82px;
   margin-left: 100px;
 }
+
+.apiContainer{
+  display: flex;
+  justify-content: space-evenly;
+}
