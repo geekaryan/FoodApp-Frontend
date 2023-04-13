@@ -44,15 +44,15 @@ const Index = ({ data }) => {
                   <div>
                     <img src={burger} alt="burger" />
                   </div>
-                  <div>{menu.name}</div>
+                  <div className={styles.everTexts}>{menu.name}</div>
                   <div className={styles.priceFlex}>
-                    <div>{menu.price}</div>
+                    <div className={styles.everText}>₹ {menu.price}</div>
                     <div className={styles.buttonflex}>
                       <div>
-                        <button>-</button>
+                        <button className={styles.btn}>-</button>
                       </div>
                       <div>
-                        <button>+</button>
+                        <button className={styles.btn}>+</button>
                       </div>
                     </div>
                   </div>

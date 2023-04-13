@@ -59,15 +59,42 @@
 .buttonflex{
   display: flex;
   align-items: center;
+  gap: 20px;
 }
 
 .priceFlex{
   display: flex;
   align-items: center;
   gap: 100px;
+  margin-top: 16px;
 }
 
 .btn{
-  background: #E82C20;
-  border-radius: 40px;
+  background: #8b5955;
+  border-radius: 6px;
+  color: #FFFFFF;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.everText{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 42px;
+
+  color: black;
+}
+
+.everTexts{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+
+  color: black;
 }
