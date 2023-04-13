@@ -1,4 +1,4 @@
-import Mobile from "./../components/Home/MobileVersion/Index";
+import Mobile from "./../components/Login/MobileVersion/Index";
 
 const MobileTest = () => {
   return (

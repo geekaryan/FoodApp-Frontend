@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Spinner } from "@chakra-ui/spinner";
+import { Spinner } from "@chakra-ui/react";
 import burger from "./../../assets/burger.png";
 
 // import Item from "./Item";
