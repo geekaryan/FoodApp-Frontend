@@ -34,7 +34,10 @@ const Header = () => {
         </Link>
 
         <div className={styles.text}>
-          <Link to="/about" style={{ textDecoration: "none", color: "black" }}>
+          <Link
+            to="/register"
+            style={{ textDecoration: "none", color: "black" }}
+          >
             <span>About Us</span>
           </Link>
         </div>
