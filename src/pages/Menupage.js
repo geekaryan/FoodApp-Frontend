@@ -3,9 +3,11 @@ import Menu from "./../components/Menu/Index";
 
 const MenuPage = () => {
   const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const menuDataHandler = async () => {
+      setIsLoading(true);
       try {
         const response = await fetch("http://localhost:7000/api/menu");
         if (!response.ok) {
@@ -17,10 +19,11 @@ const MenuPage = () => {
       } catch (err) {
         console.log(err);
       }
+      setIsLoading(false);
     };
     menuDataHandler();
   }, []);
-  return <Menu data={data} />;
+  return <Menu data={data} isLoading={isLoading} />;
 };
 
 export default MenuPage;

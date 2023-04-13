@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import { Spinner } from "@chakra-ui/spinner";
 import burger from "./../../assets/burger.png";
 
 // import Item from "./Item";
 import styles from "./Index.module.css";
 
-const Index = ({ data }) => {
+const Index = ({ data, isLoading }) => {
   console.log(data);
   return (
     <div>
@@ -36,6 +37,15 @@ const Index = ({ data }) => {
         </div>
       </div>
       <div className={styles.apiContainer}>
+        {isLoading && (
+          <Spinner
+            thickness="4px"
+            speed="0.65s"
+            emptyColor="gray.200"
+            color="blue.500"
+            size="xl"
+          />
+        )}
         {data.map((menu) => {
           return (
             <div>
@@ -45,17 +55,8 @@ const Index = ({ data }) => {
                     <img src={burger} alt="burger" />
                   </div>
                   <div className={styles.everTexts}>{menu.name}</div>
-                  <div className={styles.priceFlex}>
-                    <div className={styles.everText}>₹ {menu.price}</div>
-                    <div className={styles.buttonflex}>
-                      <div>
-                        <button className={styles.btn}>-</button>
-                      </div>
-                      <div>
-                        <button className={styles.btn}>+</button>
-                      </div>
-                    </div>
-                  </div>
+
+                  <div className={styles.everText}>₹ {menu.price}</div>
                 </div>
               </Link>
             </div>
