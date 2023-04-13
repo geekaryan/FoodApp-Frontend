@@ -12,7 +12,7 @@ const Order = () => {
         </span>
       </div>
       <div>
-        <Link to="/menu">
+        <Link to="/register">
           <button className={styles.btn}>Order Here</button>
         </Link>
       </div>
