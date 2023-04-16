@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Imprima&display=swap');
+
+
+@media only screen and (max-width: 420px){
+
+    .flex{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 98px;
+    }
+
+    .containerflex{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .title{
+        margin-left: 44px;
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 30px;
+        text-decoration: underline;
+        color: #000000;
+        margin-bottom: 28px;
+    }
+
+    .description{
+        margin-left: 44px;
+        font-family: 'Imprima', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 23px;
+        color: #000000;
+        margin-right: 24px;
+    }
+
+    .priceText{
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 30px;
+
+        color: #000000;
+    }
+
+    .rating{
+        font-family: 'Imprima', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 29px;
+
+        color: #EBC80F;
+    }
+
+    .titleDiv{
+        margin-top: 28px;
+    }
+
+  
+}

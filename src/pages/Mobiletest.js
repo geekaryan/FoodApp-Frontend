@@ -1,10 +1,10 @@
-import Mobile from "./../components/Login/MobileVersion/Index";
+import Index from "./../components/Menu/MenuDetail/MobileVersion/Index";
 
 const MobileTest = () => {
   return (
     <>
       <main>
-        <Mobile />
+        <Index />
       </main>
     </>
   );
