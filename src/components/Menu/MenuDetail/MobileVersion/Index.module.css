@@ -1,4 +1,20 @@
-.feedback{
-    margin-left: 44px;
-    margin-top: 36px;
+@media only screen and (max-width: 1000px){
+
+
+    .feedback{
+        margin-left: 44px;
+        margin-top: 36px;
+    }
+
+}
+
+
+@media only screen and (max-width: 420px){
+
+
+    .feedback{
+        margin-left: 44px;
+        margin-top: 36px;
+    }
+
 }

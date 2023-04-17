@@ -2,14 +2,14 @@ import Detail from "./Detail";
 import Feedback from "./Feedback";
 import styles from "./Index.module.css";
 
-const Index = () => {
+const Index = ({ data }) => {
   return (
     <div>
       <div>
-        <Detail />
+        <Detail data={data} />
       </div>
       <div className={styles.feedback}>
-        <Feedback />
+        <Feedback data={data} />
       </div>
     </div>
   );

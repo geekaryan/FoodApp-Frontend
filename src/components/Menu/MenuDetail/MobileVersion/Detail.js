@@ -1,7 +1,8 @@
 import burger from "./../../../../assets/mobileburgerimage.png";
 import styles from "./Detail.module.css";
 
-const Detail = () => {
+const Detail = ({ data }) => {
+  console.log(data);
   return (
     <div>
       <div className={styles.containerflex}>
@@ -10,21 +11,21 @@ const Detail = () => {
         </div>
         <div className={styles.flex}>
           <div>
-            <span className={styles.priceText}>$10</span>
+            <span className={styles.priceText}>₹ {data.price}</span>
           </div>
           <div>
             <span>
-              <span className={styles.rating}>Rating</span>: 4.5
+              <span className={styles.rating}>Rating</span>: {data.ratings}
             </span>
           </div>
         </div>
       </div>
       <div className={styles.titleDiv}>
         <div className={styles.title}>
-          <span>Ham Burger</span>
+          <span>{data.name}</span>
         </div>
         <div className={styles.description}>
-          <span>Ham Burger Description must be added in here</span>
+          <span>{data.description}</span>
         </div>
       </div>
     </div>
