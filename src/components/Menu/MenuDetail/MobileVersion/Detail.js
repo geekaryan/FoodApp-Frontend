@@ -7,7 +7,7 @@ const Detail = ({ data }) => {
     <div>
       <div className={styles.containerflex}>
         <div>
-          <img src={burger} alt="" />
+          <img src={burger} alt="burger image" />
         </div>
         <div className={styles.flex}>
           <div>
