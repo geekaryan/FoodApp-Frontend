@@ -2,10 +2,12 @@ import { Link } from "react-router-dom";
 import Slider from "./../../UI/Coursel";
 // import arrow from "./../../assets/arrow.png";
 import styles from "./Main.module.css";
-import chef1 from "./../../assets/chef.png";
-import chef2 from "./../../assets/chef2main.png";
-import chef3 from "./../../assets/chef3main.png";
+// import chef1 from "./../../assets/chef.png";
+// import chef2 from "./../../assets/chef2main.png";
+// import chef3 from "./../../assets/chef3main.png";
 import cs from "./../../assets/cs.png";
+import cs2 from "./../../assets/cs2.png";
+import cs3 from "./../../assets/cs3.png";
 
 const Main = () => {
   const slides = [
@@ -14,16 +16,16 @@ const Main = () => {
       title: "cs",
     },
     {
-      image: chef1,
-      title: "chef1",
+      image: cs2,
+      title: "cs2",
     },
     {
-      image: chef2,
-      title: "chef3",
+      image: cs3,
+      title: "cs3",
     },
     {
-      image: chef3,
-      title: "chef2",
+      image: cs2,
+      title: "cs2",
     },
   ];
   return (
