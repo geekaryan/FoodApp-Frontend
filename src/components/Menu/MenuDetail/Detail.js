@@ -49,7 +49,7 @@ const Detail = ({ data }) => {
             />
           </div>
         </div>
-        <div>
+        <div className="flex gap-[78px] ">
           <div>
             <button>+</button>
           </div>
