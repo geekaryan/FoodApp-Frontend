@@ -1,9 +1,21 @@
+import { useDispatch, useSelector } from "react-redux";
+import { counterActions } from "../../../store";
+
 import ReactStars from "react-rating-stars-component";
 import burger from "./../../../assets/burgerdetail.png";
 import styles from "./Detail.module.css";
 
 const Detail = ({ data }) => {
-  console.log(data);
+  const dispatch = useDispatch();
+  const counter = useSelector((state) => state.counter);
+
+  const incrementHanlder = () => {
+    dispatch(counterActions.increment());
+  };
+
+  const decrementHanlder = () => {
+    dispatch(counterActions.decrement());
+  };
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
@@ -51,11 +63,11 @@ const Detail = ({ data }) => {
         </div>
         <div className="flex gap-[78px] ">
           <div>
-            <button>+</button>
+            <button onClick={incrementHanlder}>+</button>
           </div>
-          <div></div>
+          <div>{counter}</div>
           <div>
-            <button>-</button>
+            <button onClick={decrementHanlder}>-</button>
           </div>
         </div>
       </div>
