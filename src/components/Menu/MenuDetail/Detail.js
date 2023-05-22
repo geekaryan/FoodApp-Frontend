@@ -61,14 +61,29 @@ const Detail = ({ data }) => {
             />
           </div>
         </div>
-        <div className="flex gap-[78px] ">
+        <div className="flex gap-[78px] items-center justify-center ">
           <div>
-            <button onClick={incrementHanlder}>+</button>
+            <button
+              onClick={decrementHanlder}
+              className="border-solid border-2 border-gray-600 text-2xl rounded p-2"
+            >
+              -
+            </button>
           </div>
-          <div>{counter}</div>
+          <div className="font-custom text-3xl">{counter}</div>
           <div>
-            <button onClick={decrementHanlder}>-</button>
+            <button
+              onClick={incrementHanlder}
+              className="border-solid border-2 border-gray-600 text-2xl rounded p-2"
+            >
+              +
+            </button>
           </div>
+        </div>
+        <div className="mt-[34px] flex justify-center">
+          <button className=" border-solid border-2 border-black pt-[12px] pb-[12px] px-[42px] py-[42px] rounded bg-yellow-300 hover:bg-white font-custom">
+            Buy Now
+          </button>
         </div>
       </div>
     </div>
