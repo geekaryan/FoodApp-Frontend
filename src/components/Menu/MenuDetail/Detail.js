@@ -49,6 +49,15 @@ const Detail = ({ data }) => {
             />
           </div>
         </div>
+        <div>
+          <div>
+            <button>+</button>
+          </div>
+          <div></div>
+          <div>
+            <button>-</button>
+          </div>
+        </div>
       </div>
     </div>
   );
