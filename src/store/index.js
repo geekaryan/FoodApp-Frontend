@@ -19,4 +19,6 @@ const store = configureStore({
   reducer: orderSlice.reducer,
 });
 
+export const orderActions = orderSlice.actions;
+
 export default store;
