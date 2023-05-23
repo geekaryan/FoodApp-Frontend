@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { counterActions } from "../../../store";
 
+// import { useState } from "react";
+
 import ReactStars from "react-rating-stars-component";
 import burger from "./../../../assets/burgerdetail.png";
 import styles from "./Detail.module.css";
@@ -9,12 +11,39 @@ const Detail = ({ data }) => {
   const dispatch = useDispatch();
   const counter = useSelector((state) => state.counter);
 
+  const num = data.name;
+  console.log(num);
+
   const incrementHanlder = () => {
     dispatch(counterActions.increment());
   };
 
   const decrementHanlder = () => {
     dispatch(counterActions.decrement());
+  };
+
+  const apiHandler = async () => {
+    try {
+      const response = await fetch("http://localhost:7000/api/order/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          itemName: data.name,
+          itemPrice: data.price,
+          itemQuantity: 2,
+        }),
+      });
+
+      if (!response.ok) {
+        console.log("Api is not working properly");
+      }
+      const hope = await response.json();
+      console.log(hope);
+    } catch (err) {
+      console.log(err.message);
+    }
   };
   return (
     <div className={styles.container}>
@@ -81,7 +110,10 @@ const Detail = ({ data }) => {
           </div>
         </div>
         <div className="mt-[34px] flex justify-center">
-          <button className=" border-solid border-2 border-black pt-[12px] pb-[12px] px-[42px] py-[42px] rounded bg-yellow-300 hover:bg-white font-custom">
+          <button
+            onClick={apiHandler}
+            className=" border-solid border-2 border-black pt-[12px] pb-[12px] px-[42px] py-[42px] rounded bg-yellow-300 hover:bg-white font-custom"
+          >
             Buy Now
           </button>
         </div>
