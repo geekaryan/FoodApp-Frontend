@@ -12,7 +12,7 @@ const Detail = ({ data }) => {
   const counter = useSelector((state) => state.counter);
 
   const num = data.name;
-  console.log(num);
+  // console.log(num);
 
   const incrementHanlder = () => {
     dispatch(counterActions.increment());
@@ -40,7 +40,7 @@ const Detail = ({ data }) => {
         console.log("Api is not working properly");
       }
       const hope = await response.json();
-      console.log(hope);
+      // console.log(hope);
     } catch (err) {
       console.log(err.message);
     }
