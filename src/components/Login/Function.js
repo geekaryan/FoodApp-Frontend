@@ -9,6 +9,14 @@ const Function = () => {
   const styleChanger = () => {
     setLogin(!login);
   };
+
+  const LoginButtonHandler = async () => {
+    const response = await fetch("", {
+      method: "POST",
+    });
+
+    const data = await response.json();
+  };
   return (
     <div className={styles.container}>
       <div className={styles.login}>
