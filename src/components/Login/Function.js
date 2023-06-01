@@ -6,6 +6,18 @@ import fb from "./../../assets/fb.png";
 
 const Function = () => {
   const [login, setLogin] = useState(false);
+
+  //s represents singup
+  //l represents login
+
+  ///--------------> Singup State <--------------------
+  const [sname, setSName] = useState("");
+  const [semail, setSEmail] = useState("");
+  const [spassword, setSPassword] = useState("");
+  const [spasswordConfirm, setSPasswordConfirm] = useState("");
+
+  ///--------------> Login State <--------------------
+
   const styleChanger = () => {
     setLogin(!login);
   };
@@ -19,8 +31,12 @@ const Function = () => {
   };
 
   const SingupButtonHandler = async () => {
-    const response = await fetch("", {
+    const response = await fetch("http://localhost:7000/api/user/signup", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({}),
     });
 
     const data = await response.json();
@@ -71,9 +87,12 @@ const Function = () => {
             <div className={styles.name}>
               <input
                 type="text"
-                placeholder="Email or username"
+                placeholder="Username"
                 className={styles.input}
               />
+            </div>
+            <div className={styles.name}>
+              <input type="text" placeholder="Email" className={styles.input} />
             </div>
             <div>
               <input
