@@ -17,14 +17,23 @@ const Function = () => {
   const [spasswordConfirm, setSPasswordConfirm] = useState("");
 
   ///--------------> Login State <--------------------
+  const [lemail, setLEmail] = useState("");
+  const [lpassword, setLPassword] = useState("");
 
   const styleChanger = () => {
     setLogin(!login);
   };
 
   const LoginButtonHandler = async () => {
-    const response = await fetch("", {
+    const response = await fetch("http://localhost:7000/api/user/login", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: lemail,
+        password: lpassword,
+      }),
     });
 
     const data = await response.json();
@@ -74,6 +83,8 @@ const Function = () => {
                 type="text"
                 placeholder="Email or username"
                 className={styles.input}
+                value={lemail}
+                onChange={(e) => setLEmail(e.target.value)}
               />
             </div>
             <div>
@@ -81,6 +92,8 @@ const Function = () => {
                 type="password"
                 placeholder="Password"
                 className={styles.input}
+                value={lpassword}
+                onChange={(e) => setLPassword(e.target.value)}
               />
             </div>
             <div className={styles.forgot}>
