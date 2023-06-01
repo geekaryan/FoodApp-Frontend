@@ -28,6 +28,7 @@ const Function = () => {
     });
 
     const data = await response.json();
+    console.log(data);
   };
 
   const SingupButtonHandler = async () => {
@@ -36,10 +37,16 @@ const Function = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({}),
+      body: JSON.stringify({
+        name: sname,
+        email: semail,
+        password: spassword,
+        passwordConfirm: spasswordConfirm,
+      }),
     });
 
     const data = await response.json();
+    console.log(data);
   };
   return (
     <div className={styles.container}>
@@ -89,16 +96,26 @@ const Function = () => {
                 type="text"
                 placeholder="Username"
                 className={styles.input}
+                value={sname}
+                onChange={(e) => setSName(e.target.value)}
               />
             </div>
             <div className={styles.name}>
-              <input type="text" placeholder="Email" className={styles.input} />
+              <input
+                type="text"
+                placeholder="Email"
+                className={styles.input}
+                value={semail}
+                onChange={(e) => setSEmail(e.target.value)}
+              />
             </div>
             <div>
               <input
                 type="password"
                 placeholder="Password"
                 className={styles.input}
+                value={spassword}
+                onChange={(e) => setSPassword(e.target.value)}
               />
             </div>
             <div className={styles.confirm}>
@@ -106,6 +123,8 @@ const Function = () => {
                 type="Confirm password"
                 placeholder="Confirm Password"
                 className={styles.input}
+                value={spasswordConfirm}
+                onChange={(e) => setSPasswordConfirm(e.target.value)}
               />
             </div>
           </div>
@@ -113,13 +132,17 @@ const Function = () => {
         {/* login button */}
         {!login && (
           <div>
-            <button className={styles.btn}>Login</button>
+            <button className={styles.btn} onClick={LoginButtonHandler}>
+              Login
+            </button>
           </div>
         )}
         {/* singup button */}
         {login && (
           <div>
-            <button className={styles.btn}>Sign up</button>
+            <button className={styles.btn} onClick={SingupButtonHandler}>
+              Sign up
+            </button>
           </div>
         )}
         <div className={styles.or}>
