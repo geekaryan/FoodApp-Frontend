@@ -9,7 +9,7 @@ const MenuPage = () => {
     const menuDataHandler = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch("http://localhost:7000/api/menu");
+        const response = await fetch("/api/menu");
         if (!response.ok) {
           console.log("Api is not working");
         }
