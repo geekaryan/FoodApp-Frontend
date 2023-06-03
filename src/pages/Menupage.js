@@ -3,8 +3,9 @@ import { useCookies } from "react-cookie";
 import Menu from "./../components/Menu/Index";
 
 const MenuPage = () => {
-  const [cookies, setCookie, removeCookie] = useCookies(["name", "jwt"]);
+  const [cookies] = useCookies(["name", "JWT", "jwt"]);
   console.log(cookies.name);
+  console.log(cookies.JWT);
   console.log(cookies.jwt);
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);

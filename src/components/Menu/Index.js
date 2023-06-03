@@ -48,7 +48,7 @@ const Index = ({ data, isLoading }) => {
         )}
         {data.map((menu) => {
           return (
-            <div>
+            <div key={menu._id}>
               <Link to={menu._id}>
                 <div className={styles.eachitem}>
                   <div>
