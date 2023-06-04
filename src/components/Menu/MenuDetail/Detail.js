@@ -24,7 +24,7 @@ const Detail = ({ data }) => {
 
   const apiHandler = async () => {
     try {
-      const response = await fetch("http://localhost:7000/api/order/", {
+      const response = await fetch("/api/order/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -52,7 +52,7 @@ const Detail = ({ data }) => {
           <img src={burger} alt="burger" />
         </div>
         <div className={styles.price}>
-          <span>₹ {data.ratings}</span>
+          <span>₹ {data.price}</span>
         </div>
       </div>
 
