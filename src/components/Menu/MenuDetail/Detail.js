@@ -9,11 +9,14 @@ import burger from "./../../../assets/burgerdetail.png";
 import styles from "./Detail.module.css";
 
 const Detail = ({ data }) => {
+  const [cookies] = useCookies(["jwt", "name"]);
+  console.log(cookies.jwt);
+  console.log(cookies.name);
   const dispatch = useDispatch();
   const counter = useSelector((state) => state.counter);
 
-  const num = data.name;
-  console.log(num);
+  // const num = data.name;
+  // console.log
 
   const incrementHanlder = () => {
     dispatch(counterActions.increment());
@@ -29,6 +32,7 @@ const Detail = ({ data }) => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${cookies.jwt}`,
         },
         body: JSON.stringify({
           itemName: data.name,
