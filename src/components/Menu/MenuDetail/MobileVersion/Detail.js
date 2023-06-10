@@ -12,7 +12,7 @@ const Detail = ({ data }) => {
 
   const buyHandler = async () => {
     try {
-      const response = await fetch("", {
+      const response = await fetch("/api/order/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -26,13 +26,14 @@ const Detail = ({ data }) => {
       });
 
       if (!response.ok) {
-        console.log("API is not working properly");
+        console.log("Api is not working properly");
       }
-
-      const result = response.json();
-      console.log(result);
+      const hope = await response.json();
+      console.log(hope);
     } catch (err) {
-      console.log(err);
+      console.log(err.message);
+      // setError("Please Login or Singup...");
+      // navigate("/register");
     }
   };
   return (
