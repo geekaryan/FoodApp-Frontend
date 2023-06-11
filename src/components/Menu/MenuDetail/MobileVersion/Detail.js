@@ -1,11 +1,16 @@
 // import { useState } from "react";
 import { useCookies } from "react-cookie";
+import { useDispatch, useSelector } from "react-redux";
+import { counterActions } from "../../../../store";
 
 import burger from "./../../../../assets/mobileburgerimage.png";
 import styles from "./Detail.module.css";
 
 const Detail = ({ data }) => {
   // console.log(data);
+
+  const dispatch = useDispatch();
+  const counter = useSelector((state) => state.counter);
 
   const [cookies] = useCookies(["jwt", "name"]);
   console.log(cookies.jwt);
@@ -36,6 +41,13 @@ const Detail = ({ data }) => {
       // navigate("/register");
     }
   };
+
+  const incrementHandler = () => {
+    dispatch(counterActions.increment());
+  };
+  const decrementHandler = () => {
+    dispatch(counterActions.decrement());
+  };
   return (
     <div>
       <div className={styles.containerflex}>
@@ -61,9 +73,25 @@ const Detail = ({ data }) => {
           <span>{data.description}</span>
         </div>
       </div>
-      {/* <div>
-
-      </div> */}
+      <div className="flex justify-center items-center gap-[44px] mt-[24px] mb-[24px]">
+        <div>
+          <button
+            onClick={decrementHandler}
+            className="border-solid border-2 border-gray-600 text-2xl rounded p-2"
+          >
+            -
+          </button>
+        </div>
+        <div className="font-custom text-2xl">{counter}</div>
+        <div>
+          <button
+            className="border-solid border-2 border-gray-600 text-2xl rounded p-2"
+            onClick={incrementHandler}
+          >
+            +
+          </button>
+        </div>
+      </div>
       <div className="flex justify-center mt-[22px]">
         <button
           onClick={buyHandler}
