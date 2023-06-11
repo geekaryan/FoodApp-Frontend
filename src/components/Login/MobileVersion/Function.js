@@ -17,11 +17,12 @@ const Function = () => {
   const LoginButtonHandler = () => {};
 
   //--------------->Sigup section <------------
-  const SingupButtonHandler = () => {};
+
   const [sname, setSName] = useState("");
   const [semail, setSEmail] = useState("");
   const [spassword, setSPassword] = useState("");
   const [spasswordConfirm, setSPasswordConfirm] = useState("");
+  const SingupButtonHandler = () => {};
   return (
     <div className={styles.container}>
       <div className={styles.option}>
