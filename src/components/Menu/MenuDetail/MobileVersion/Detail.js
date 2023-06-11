@@ -1,7 +1,7 @@
 // import { useState } from "react";
 import { useCookies } from "react-cookie";
 import { useDispatch, useSelector } from "react-redux";
-import { counterActions } from "../../../../store";
+import { counterActions } from "../../../../store/cart-slice";
 
 import burger from "./../../../../assets/mobileburgerimage.png";
 import styles from "./Detail.module.css";
@@ -10,7 +10,8 @@ const Detail = ({ data }) => {
   // console.log(data);
 
   const dispatch = useDispatch();
-  const counter = useSelector((state) => state.counter);
+  const showcounter = useSelector((state) => state.count.counter);
+  console.log(showcounter);
 
   const [cookies] = useCookies(["jwt", "name"]);
   console.log(cookies.jwt);
@@ -83,7 +84,7 @@ const Detail = ({ data }) => {
             -
           </button>
         </div>
-        <div className="font-custom text-2xl">{counter}</div>
+        <div className="font-custom text-2xl">{showcounter}</div>
         <div>
           <button
             className="border-solid border-2 border-gray-600 text-2xl rounded p-2"

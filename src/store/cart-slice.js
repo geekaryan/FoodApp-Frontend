@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const cartSlice = createSlice({
-  name: "cartSlice",
+const counterSlice = createSlice({
+  name: "count",
   initialState: {
     counter: 0,
   },
@@ -18,6 +18,6 @@ const cartSlice = createSlice({
   },
 });
 
-const 
+export const counterActions = counterSlice.actions;
 
-export default cartSlice;
+export default counterSlice;

@@ -1,7 +1,7 @@
-import { createSlice } from "react-redux";
+import { createSlice } from "@reduxjs/toolkit";
 
 const uiSlice = createSlice({
-  name: "uiSlice",
+  name: "ui",
   intialState: {
     isVisibile: false,
   },
@@ -11,5 +11,7 @@ const uiSlice = createSlice({
     },
   },
 });
+
+export const uiActions = uiSlice.actions;
 
 export default uiSlice;
