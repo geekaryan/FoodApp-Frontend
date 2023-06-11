@@ -6,14 +6,17 @@ import logo from "./../../assets/logo.png";
 const Header = () => {
   return (
     <div className={styles.container}>
-      <div>
-        <img
-          src={logo}
-          alt="logo"
-          style={{ marginLeft: "36px" }}
-          // style={{ height: "100px", width: "100px" }}
-        />
-      </div>
+      <Link to="/">
+        <div>
+          <img
+            src={logo}
+            alt="logo"
+            style={{ marginLeft: "36px" }}
+            // style={{ height: "100px", width: "100px" }}
+          />
+        </div>
+      </Link>
+
       <div className={styles.flexbox}>
         {/* <Link to="/" style={{ textDecoration: "none", color: "black" }}>
           <div className={styles.text}>

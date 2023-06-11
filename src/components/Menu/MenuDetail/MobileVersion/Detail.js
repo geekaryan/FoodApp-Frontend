@@ -54,6 +54,7 @@ const Detail = ({ data }) => {
         <div>
           <img src={burger} alt="burger" />
         </div>
+
         <div className={styles.flex}>
           <div>
             <span className={styles.priceText}>₹ {data.price}</span>

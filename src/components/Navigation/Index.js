@@ -1,4 +1,4 @@
-// import { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "./../../assets/logo2.png";
 import user from "./../../assets/user.png";
 import styles from "./Index.module.css";
@@ -7,9 +7,12 @@ const Index = () => {
   return (
     <>
       <div className={styles.container}>
-        <div className={styles.img}>
-          <img src={logo} alt="logo" />
-        </div>
+        <Link to="/">
+          <div className={styles.img}>
+            <img src={logo} alt="logo" />
+          </div>
+        </Link>
+
         <div className={styles.flex}>
           <div className={styles.text}>
             <h1>Order</h1>
