@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./Function.module.css";
 import google from "./../../../assets/google.png";
 import twitter from "./../../../assets/twitter.png";
@@ -10,11 +11,35 @@ const Function = () => {
     setLogin(!login);
   };
 
+  const navigate = useNavigate();
+
   //--------------->Login Section <-----------------
 
   const [lemail, setLEmail] = useState("");
   const [lpassword, setLPassword] = useState("");
-  const LoginButtonHandler = () => {};
+  const LoginButtonHandler = async () => {
+    try {
+      const response = await fetch("/api/user/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: lemail,
+          password: lpassword,
+        }),
+      });
+
+      const data = await response.json();
+      console.log(data);
+      navigate("/");
+    } catch (e) {
+      console.log(e.message);
+    }
+
+    setLEmail("");
+    setLPassword("");
+  };
 
   //--------------->Sigup section <------------
 
