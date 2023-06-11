@@ -10,10 +10,18 @@ const Function = () => {
     setLogin(!login);
   };
 
+  //--------------->Login Section <-----------------
+
   const [lemail, setLEmail] = useState("");
   const [lpassword, setLPassword] = useState("");
   const LoginButtonHandler = () => {};
+
+  //--------------->Sigup section <------------
   const SingupButtonHandler = () => {};
+  const [sname, setSName] = useState("");
+  const [semail, setSEmail] = useState("");
+  const [spassword, setSPassword] = useState("");
+  const [spasswordConfirm, setSPasswordConfirm] = useState("");
   return (
     <div className={styles.container}>
       <div className={styles.option}>
@@ -62,8 +70,19 @@ const Function = () => {
           <div className={styles.name}>
             <input
               type="text"
-              placeholder="Email or username"
+              placeholder="Name"
               className={styles.input}
+              value={sname}
+              onChange={(e) => setSName(e.target.value)}
+            />
+          </div>
+          <div className={styles.name}>
+            <input
+              type="text"
+              placeholder="Email"
+              className={styles.input}
+              value={semail}
+              onChange={(e) => setSEmail(e.target.value)}
             />
           </div>
           <div>
@@ -71,6 +90,8 @@ const Function = () => {
               type="password"
               placeholder="Password"
               className={styles.input}
+              value={spassword}
+              onChange={(e) => setSPassword(e.target.value)}
             />
           </div>
           <div className={styles.confirm}>
@@ -78,6 +99,8 @@ const Function = () => {
               type="Confirm password"
               placeholder="Confirm Password"
               className={styles.input}
+              value={spasswordConfirm}
+              onChange={(e) => setSPasswordConfirm(e.target.value)}
             />
           </div>
         </div>
