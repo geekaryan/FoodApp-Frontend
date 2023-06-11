@@ -9,6 +9,11 @@ const Function = () => {
   const styleChanger = () => {
     setLogin(!login);
   };
+
+  const [lemail, setLEmail] = useState("");
+  const [lpassword, setLPassword] = useState("");
+  const LoginButtonHandler = () => {};
+  const SingupButtonHandler = () => {};
   return (
     <div className={styles.container}>
       <div className={styles.option}>
@@ -33,6 +38,8 @@ const Function = () => {
               type="text"
               placeholder="Email or username"
               className={styles.input}
+              value={lemail}
+              onChange={(e) => setLEmail(e.target.value)}
             />
           </div>
           <div>
@@ -40,6 +47,8 @@ const Function = () => {
               type="password"
               placeholder="Password"
               className={styles.input}
+              value={lpassword}
+              onChange={(e) => setLPassword(e.target.value)}
             />
           </div>
           <div className={styles.forgot}>
@@ -76,13 +85,17 @@ const Function = () => {
       {/* login button */}
       {!login && (
         <div>
-          <button className={styles.btn}>Login</button>
+          <button onClick={LoginButtonHandler} className={styles.btn}>
+            Login
+          </button>
         </div>
       )}
       {/* singup button */}
       {login && (
         <div>
-          <button className={styles.btn}>Sign up</button>
+          <button onClick={SingupButtonHandler} className={styles.btn}>
+            Sign up
+          </button>
         </div>
       )}
       <div className={styles.or}>
