@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const uiSlice = createSlice({
   name: "ui",
-  intialState: {
+  initialState: {
     isVisibile: false,
   },
   reducers: {
