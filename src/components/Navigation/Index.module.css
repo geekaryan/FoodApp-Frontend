@@ -41,6 +41,15 @@
     margin-right: 12px;
 }
 
+.cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
 @media only screen and (min-width: 768px){
     .secondFlex{
         display: none;
