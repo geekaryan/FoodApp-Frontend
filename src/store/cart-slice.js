@@ -33,7 +33,7 @@ const counterSlice = createSlice({
         existingItem.totalPrice = totalPrice + newItem.price;
       }
     },
-    removeItemFromCart() {},
+    removeItemFromCart() {}, //remove cart left..
   },
 });
 
