@@ -4,6 +4,8 @@ const counterSlice = createSlice({
   name: "count",
   initialState: {
     counter: 0,
+    items: [],
+    totalQuantity: 0,
   },
   reducers: {
     increment(state) {
