@@ -22,6 +22,8 @@ const Index = () => {
           </div>
         </Link>
 
+        //just checking github is it working fine or not.
+
         <div className={styles.flex}>
           <div className={styles.text}>
             <h1>Order</h1>
