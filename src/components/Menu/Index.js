@@ -5,8 +5,8 @@ import burger from "./../../assets/burger.png";
 // import Item from "./Item";
 import styles from "./Index.module.css";
 
-const Index = ({ data, isLoading }) => {
-  console.log(data);
+const Index = (props) => {
+  console.log(props.data);
   return (
     <div>
       <div className={styles.srcDiv}>
@@ -37,7 +37,7 @@ const Index = ({ data, isLoading }) => {
         </div>
       </div>
       <div className={styles.apiContainer}>
-        {isLoading && (
+        {props.isLoading && (
           <Spinner
             thickness="4px"
             speed="0.65s"
@@ -46,7 +46,7 @@ const Index = ({ data, isLoading }) => {
             size="xl"
           />
         )}
-        {data.map((menu) => {
+        {props.data.map((menu) => {
           return (
             <div key={menu._id}>
               <Link to={menu._id}>
