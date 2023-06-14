@@ -2,14 +2,16 @@
 import Detail from "./Detail";
 import Feedback from "./Feedback";
 
-const Index = ({ data }) => {
+const Index = (props) => {
+  //going to work with props soon as we are going to map accordingly to the redux
   //   const params = useParams();
   return (
     <div>
       {/* {params.id} */}
       {/* {data.name} */}
       <div>
-        <Detail data={data} />
+        <Detail />
+        {/* adding items here */}
       </div>
       <div>
         <Feedback />
