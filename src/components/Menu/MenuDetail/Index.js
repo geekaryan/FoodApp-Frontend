@@ -17,7 +17,7 @@ const Index = (props) => {
           price={props.data.price}
           title={props.data.name}
           description={props.data.description}
-          rating={props.data.ratings}
+          ratings={props.data.ratings}
         />
         {/* adding items here */}
       </div>

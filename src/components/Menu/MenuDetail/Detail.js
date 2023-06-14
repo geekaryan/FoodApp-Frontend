@@ -8,7 +8,7 @@ import ReactStars from "react-rating-stars-component";
 import burger from "./../../../assets/burgerdetail.png";
 import styles from "./Detail.module.css";
 
-const Detail = ({ data }) => {
+const Detail = (props) => {
   const [cookies] = useCookies(["jwt", "name"]);
   console.log(cookies.jwt);
   console.log(cookies.name);
@@ -39,8 +39,8 @@ const Detail = ({ data }) => {
           Authorization: `Bearer ${cookies.jwt}`,
         },
         body: JSON.stringify({
-          itemName: data.name,
-          itemPrice: data.price,
+          itemName: props.title,
+          itemPrice: props.price,
           itemQuantity: 2,
         }),
       });
@@ -63,37 +63,37 @@ const Detail = ({ data }) => {
           <img src={burger} alt="burger" />
         </div>
         <div className={styles.price}>
-          <span>₹ {data.price}</span>
+          <span>₹ {props.price}</span>
         </div>
       </div>
 
       <div>
         <div className={styles.name}>
-          <span>{data.name}</span>
+          <span>{props.title}</span>
         </div>
         <div className={styles.item}>
           <div>
-            <span>Bun: {data.description}</span>
+            <span>Bun: {props.description}</span>
           </div>
           <div>
-            <span>veggie: {data.name}</span>
+            <span>veggie: {props.description}</span>
           </div>
           <div>
-            <span>Cheese: {data.name}</span>
+            <span>Cheese: {props.description}</span>
           </div>
           <div>
-            <span>Pickle: {data.name}</span>
+            <span>Pickle: {props.description}</span>
           </div>
         </div>
         <div className={styles.ratingDiv}>
           <div>
             {" "}
             <span className={styles.rtext}>Ratings</span>{" "}
-            <span className={styles.ntext}>: {data.ratings}</span>{" "}
+            <span className={styles.ntext}>: {props.ratings}</span>{" "}
           </div>
           <div>
             <ReactStars
-              value={data.ratings}
+              value={props.ratings}
               count={5}
               size={100}
               isHalf={true}
