@@ -6,7 +6,7 @@ import { counterActions } from "../../../../store/cart-slice";
 import burger from "./../../../../assets/mobileburgerimage.png";
 import styles from "./Detail.module.css";
 
-const Detail = ({ data }) => {
+const Detail = (props) => {
   // console.log(data);
 
   const dispatch = useDispatch();
@@ -16,38 +16,48 @@ const Detail = ({ data }) => {
   const [cookies] = useCookies(["jwt", "name"]);
   console.log(cookies.jwt);
 
-  const buyHandler = async () => {
-    try {
-      const response = await fetch("/api/order/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${cookies.jwt}`,
-        },
-        body: JSON.stringify({
-          itemName: data.name,
-          itemPrice: data.price,
-          itemQuantity: 2,
-        }),
-      });
+  // const buyHandler = async () => {
+  //   try {
+  //     const response = await fetch("/api/order/", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         Authorization: `Bearer ${cookies.jwt}`,
+  //       },
+  //       body: JSON.stringify({
+  //         itemName: props.title,
+  //         itemPrice: props.price,
+  //         itemQuantity: 2,
+  //       }),
+  //     });
 
-      if (!response.ok) {
-        console.log("Api is not working properly");
-      }
-      const hope = await response.json();
-      console.log(hope);
-    } catch (err) {
-      console.log(err.message);
-      // setError("Please Login or Singup...");
-      // navigate("/register");
-    }
-  };
+  //     if (!response.ok) {
+  //       console.log("Api is not working properly");
+  //     }
+  //     const hope = await response.json();
+  //     console.log(hope);
+  //   } catch (err) {
+  //     console.log(err.message);
+  //     // setError("Please Login or Singup...");
+  //     // navigate("/register");
+  //   }
+  // };
 
   const incrementHandler = () => {
     dispatch(counterActions.increment());
   };
   const decrementHandler = () => {
     dispatch(counterActions.decrement());
+  };
+
+  const addToHanlder = () => {
+    dispatch(
+      counterActions.addItemToCart({
+        id: props.id,
+        title: props.title,
+        price: props.price,
+      })
+    );
   };
   return (
     <div>
@@ -58,21 +68,21 @@ const Detail = ({ data }) => {
 
         <div className={styles.flex}>
           <div>
-            <span className={styles.priceText}>₹ {data.price}</span>
+            <span className={styles.priceText}>₹ {props.price}</span>
           </div>
           <div>
             <span>
-              <span className={styles.rating}>Rating</span>: {data.ratings}
+              <span className={styles.rating}>Rating</span>: {props.ratings}
             </span>
           </div>
         </div>
       </div>
       <div className={styles.titleDiv}>
         <div className={styles.title}>
-          <span>{data.name}</span>
+          <span>{props.title}</span>
         </div>
         <div className={styles.description}>
-          <span>{data.description}</span>
+          <span>{props.description}</span>
         </div>
       </div>
       <div className="flex justify-center items-center gap-[44px] mt-[24px] mb-[24px]">
@@ -96,10 +106,10 @@ const Detail = ({ data }) => {
       </div>
       <div className="flex justify-center mt-[22px]">
         <button
-          onClick={buyHandler}
+          onClick={addToHanlder}
           className="border-solid border-2 border-black pt-[12px] pb-[12px] px-[32px] py-[32px] bg-yellow-300 hover:bg-white font-custom"
         >
-          Buy Now
+          Add to cart
         </button>
       </div>
     </div>

@@ -8,6 +8,7 @@ import styles from "./Index.module.css";
 const Index = () => {
   const dispatch = useDispatch();
   const toggle = useSelector((state) => state.ui.cartIsVisible);
+  const cartQuantity = useSelector((state) => state.count.totalQuantity);
 
   const toggleHandler = () => {
     console.log("Hi from the toggle button");
@@ -28,6 +29,9 @@ const Index = () => {
           </div>
           <div className={styles.text}>
             <button onClick={toggleHandler}>Cart</button>
+            <div>
+              <p>{cartQuantity}</p>
+            </div>
           </div>
           <div className={styles.text}>
             <h1>Menu</h1>

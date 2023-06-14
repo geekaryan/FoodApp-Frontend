@@ -30,31 +30,41 @@ const Detail = (props) => {
     dispatch(counterActions.decrement());
   };
 
-  const apiHandler = async () => {
-    try {
-      const response = await fetch("/api/order/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${cookies.jwt}`,
-        },
-        body: JSON.stringify({
-          itemName: props.title,
-          itemPrice: props.price,
-          itemQuantity: 2,
-        }),
-      });
+  // const apiHandler = async () => {
+  //   try {
+  //     const response = await fetch("/api/order/", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         Authorization: `Bearer ${cookies.jwt}`,
+  //       },
+  //       body: JSON.stringify({
+  //         itemName: props.title,
+  //         itemPrice: props.price,
+  //         itemQuantity: 2,
+  //       }),
+  //     });
 
-      if (!response.ok) {
-        console.log("Api is not working properly");
-      }
-      const hope = await response.json();
-      console.log(hope);
-    } catch (err) {
-      console.log(err.message);
-      setError("Please Login or Singup...");
-      navigate("/register");
-    }
+  //     if (!response.ok) {
+  //       console.log("Api is not working properly");
+  //     }
+  //     const hope = await response.json();
+  //     console.log(hope);
+  //   } catch (err) {
+  //     console.log(err.message);
+  //     setError("Please Login or Singup...");
+  //     navigate("/register");
+  //   }
+  // };
+
+  const addToHanlder = () => {
+    dispatch(
+      counterActions.addItemToCart({
+        id: props.id,
+        title: props.title,
+        price: props.price,
+      })
+    );
   };
   return (
     <div className={styles.container}>
@@ -122,10 +132,10 @@ const Detail = (props) => {
         </div>
         <div className="mt-[34px] flex justify-center">
           <button
-            onClick={apiHandler}
+            onClick={addToHanlder}
             className=" border-solid border-2 border-black pt-[12px] pb-[12px] px-[42px] py-[42px] rounded bg-yellow-300 hover:bg-white font-custom"
           >
-            Buy Now
+            Add to cart
           </button>
         </div>
         <div className="font-custom flex justify-center mt-2 text-2xl ">
