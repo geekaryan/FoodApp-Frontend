@@ -17,7 +17,7 @@ const counterSlice = createSlice({
         state.counter = 0;
       }
     },
-    addItemToCart() {
+    addItemToCart(state, action) {
       const newItem = action.payload;
       const existingItem = state.items.find((item) => item._id === newItem._id);
       if (!existingItem) {
@@ -30,7 +30,7 @@ const counterSlice = createSlice({
         });
       } else {
         existingItem.quantity++;
-        existingItem.totalPrice = totalPrice + newItem.price;
+        existingItem.totalPrice = existingItem.totalPrice + newItem.price;
       }
     },
     removeItemFromCart() {}, //remove cart left..
