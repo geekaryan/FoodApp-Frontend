@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { counterActions } from "../../../store/cart-slice";
+import { sumActions } from "../../../store/counter-slice";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -14,7 +15,7 @@ const Detail = (props) => {
   console.log(cookies.name);
   const [error, setError] = useState("");
   const dispatch = useDispatch();
-  const counter = useSelector((state) => state.count.counter);
+  const counter = useSelector((state) => state.sum.counter);
   console.log(counter);
 
   const navigate = useNavigate();
@@ -23,11 +24,11 @@ const Detail = (props) => {
   // console.log
 
   const incrementHanlder = () => {
-    dispatch(counterActions.increment());
+    dispatch(sumActions.increment());
   };
 
   const decrementHanlder = () => {
-    dispatch(counterActions.decrement());
+    dispatch(sumActions.decrement());
   };
 
   // const apiHandler = async () => {

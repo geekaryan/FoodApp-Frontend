@@ -2,6 +2,7 @@
 import { useCookies } from "react-cookie";
 import { useDispatch, useSelector } from "react-redux";
 import { counterActions } from "../../../../store/cart-slice";
+import { sumActions } from "../../../../store/counter-slice";
 
 import burger from "./../../../../assets/mobileburgerimage.png";
 import styles from "./Detail.module.css";
@@ -10,7 +11,7 @@ const Detail = (props) => {
   // console.log(data);
 
   const dispatch = useDispatch();
-  const showcounter = useSelector((state) => state.count.counter);
+  const showcounter = useSelector((state) => state.sum.counter);
   console.log(showcounter);
 
   const [cookies] = useCookies(["jwt", "name"]);
@@ -44,10 +45,10 @@ const Detail = (props) => {
   // };
 
   const incrementHandler = () => {
-    dispatch(counterActions.increment());
+    dispatch(sumActions.increment());
   };
   const decrementHandler = () => {
-    dispatch(counterActions.decrement());
+    dispatch(sumActions.decrement());
   };
 
   const addToHanlder = () => {

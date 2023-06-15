@@ -1,23 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { sumInitialState } from "./counter-slice";
+
+const counter = 0;
 
 const counterSlice = createSlice({
   name: "count",
   initialState: {
-    counter: 0,
     items: [],
-    totalQuantity: 0,
+    count: 0,
+    totalQuantity: counter,
   },
   reducers: {
-    increment(state) {
-      state.counter++;
-    },
-    decrement(state) {
-      state.counter--;
-      if (state.counter < 0) {
-        state.counter = 0;
-      }
-    },
     addItemToCart(state, action) {
+      state.count++;
       const newItem = action.payload;
       const existingItem = state.items.find((item) => item.id === newItem.id);
       state.totalQuantity++;
