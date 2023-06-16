@@ -46,8 +46,61 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background: #FBFBFB;
+    box-shadow: 0px 4px 7px 9px rgba(0, 0, 0, 0.25);
+    border-radius: 14px;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-bottom: 1px solid #F52222;
+    padding-bottom: 22px;
+    padding-top: 22px;
+    margin-bottom: 32px;
 }
 
+
+.price{
+    display: flex;
+    align-items: center;
+    justify-content: space-between !important;
+    margin-top: 32px;
+    
+}
+
+.fooddetail{
+    display: flex;
+    align-items: center;
+    gap: 400px;
+    margin-bottom: 20px;
+}
+.fooddetails{
+    display: flex;
+    align-items: center;
+    gap: 380px;
+    margin-left: 12px;
+}
+
+.btn{
+    background: #E82C20;
+    border-radius: 40px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 16px;
+    padding-right: 16px;
+    color: white;
+}
+
+@media only screen and (max-width: 1000px){
+   .fooddetail{
+    gap: 300px;
+   }
+   .fooddetails{
+    gap: 280px;
+   }
+   .cart{
+    margin-left: 20%;
+    margin-right: 20%;
+   }
+}
 
 
 @media only screen and (min-width: 768px){
@@ -63,5 +116,15 @@
     .img{
         height: 100px;
         width: 90px;
+    }
+    .cart{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .fooddetail{
+        gap: 200px;
+    }
+    .fooddetail{
+        gap: 180px;
     }
 }

@@ -86,7 +86,7 @@ const Detail = (props) => {
           <span>{props.description}</span>
         </div>
       </div>
-      <div className="flex justify-center items-center gap-[44px] mt-[24px] mb-[24px]">
+      {/* <div className="flex justify-center items-center gap-[44px] mt-[24px] mb-[24px]">
         <div>
           <button
             onClick={decrementHandler}
@@ -104,7 +104,7 @@ const Detail = (props) => {
             +
           </button>
         </div>
-      </div>
+      </div> */}
       <div className="flex justify-center mt-[22px]">
         <button
           onClick={addToHanlder}

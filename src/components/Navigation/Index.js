@@ -3,6 +3,7 @@ import { uiActions } from "../../store/ui-slice";
 import { Link } from "react-router-dom";
 import logo from "./../../assets/logo2.png";
 import user from "./../../assets/user.png";
+import cart from "./../../assets/cart.png";
 import styles from "./Index.module.css";
 
 const Index = () => {
@@ -27,9 +28,11 @@ const Index = () => {
           <div className={styles.text}>
             <h1>Order</h1>
           </div>
-          <div className={styles.text}>
-            <button onClick={toggleHandler}>Cart</button>
-            <div>
+          <div className={styles.text} style={{ display: "flex" }}>
+            <button onClick={toggleHandler}>
+              <img src={cart} alt="cart" />
+            </button>
+            <div className="mx-2">
               <p>{cartQuantity}</p>
             </div>
           </div>
@@ -52,22 +55,22 @@ const Index = () => {
 
       {toggle && (
         <div className={styles.cart}>
-          <div className="flex items-center">
+          <div className={styles.fooddetail}>
             <div>
               <p>Hamburger</p>
             </div>
             <div>$10.00</div>
           </div>
-          <div className="flex items-center">
+          <div className={styles.fooddetails}>
             <div>
               <p>X2</p>
             </div>
             <div className="flex items-center">
-              <div>
-                <button>-</button>
+              <div className="ml-[22px] mr-[22px]">
+                <button className={styles.btn}>-</button>
               </div>
               <div>
-                <button>+</button>
+                <button className={styles.btn}>+</button>
               </div>
             </div>
           </div>
