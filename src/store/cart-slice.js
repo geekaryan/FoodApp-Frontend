@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { sumInitialState } from "./counter-slice";
 
 const counter = 0;
 
@@ -18,11 +17,11 @@ const counterSlice = createSlice({
       state.totalQuantity++;
       if (!existingItem) {
         state.items.push({
-          itemId: newItem.id,
+          id: newItem.id,
           price: newItem.price,
           quantity: 1,
           totalPrice: newItem.price,
-          name: newItem.name,
+          name: newItem.title,
         });
       } else {
         existingItem.quantity++;

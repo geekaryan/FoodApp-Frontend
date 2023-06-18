@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { uiActions } from "../../store/ui-slice";
+import { counterActions } from "../../store/cart-slice";
 import { Link } from "react-router-dom";
 import logo from "./../../assets/logo2.png";
 import user from "./../../assets/user.png";
@@ -10,11 +11,13 @@ const Index = () => {
   const dispatch = useDispatch();
   const toggle = useSelector((state) => state.ui.cartIsVisible);
   const cartQuantity = useSelector((state) => state.count.totalQuantity);
+  const cartItems = useSelector((state) => state.count.items);
 
   const toggleHandler = () => {
     console.log("Hi from the toggle button");
     dispatch(uiActions.toggle());
   };
+
   return (
     <div>
       <div className={styles.container}>
@@ -52,28 +55,34 @@ const Index = () => {
           <img src={user} alt="user" />
         </div>
       </div>
-
       {toggle && (
-        <div className={styles.cart}>
-          <div className={styles.fooddetail}>
-            <div>
-              <p>Hamburger</p>
-            </div>
-            <div>$10.00</div>
-          </div>
-          <div className={styles.fooddetails}>
-            <div>
-              <p>X2</p>
-            </div>
-            <div className="flex items-center">
-              <div className="ml-[22px] mr-[22px]">
-                <button className={styles.btn}>-</button>
+        <div className={styles.carts}>
+          {cartItems.map((item) => (
+            <div key={item.id} className={styles.cart}>
+              <div className={styles.fooddetail}>
+                <div>
+                  <p>{item.name}</p>
+                </div>
+                <div>
+                  ₹ {item.totalPrice}
+                  <p>(₹ {item.price} )</p>
+                </div>
               </div>
-              <div>
-                <button className={styles.btn}>+</button>
+              <div className={styles.fooddetails}>
+                <div>
+                  <p>X{item.quantity}</p>
+                </div>
+                <div className="flex items-center">
+                  <div className="ml-[22px] mr-[22px]">
+                    <button className={styles.btn}>-</button>
+                  </div>
+                  <div>
+                    <button className={styles.btn}>+</button>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       )}
     </div>
