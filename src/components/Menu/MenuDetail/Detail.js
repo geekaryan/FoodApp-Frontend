@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { counterActions } from "../../../store/cart-slice";
-import { sumActions } from "../../../store/counter-slice";
+// import { sumActions } from "../../../store/counter-slice";
 import { useCookies } from "react-cookie";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+// import { useNavigate } from "react-router-dom";
+// import { useState } from "react";
 
 import ReactStars from "react-rating-stars-component";
 import burger from "./../../../assets/burgerdetail.png";
@@ -13,23 +13,23 @@ const Detail = (props) => {
   const [cookies] = useCookies(["jwt", "name"]);
   console.log(cookies.jwt);
   console.log(cookies.name);
-  const [error, setError] = useState("");
+  // const [error, setError] = useState("");
   const dispatch = useDispatch();
   const counter = useSelector((state) => state.sum.counter);
   console.log(counter);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   // const num = data.name;
   // console.log
 
-  const incrementHanlder = () => {
-    dispatch(sumActions.increment());
-  };
+  // const incrementHanlder = () => {
+  //   dispatch(sumActions.increment());
+  // };
 
-  const decrementHanlder = () => {
-    dispatch(sumActions.decrement());
-  };
+  // const decrementHanlder = () => {
+  //   dispatch(sumActions.decrement());
+  // };
 
   // const apiHandler = async () => {
   //   try {
@@ -139,9 +139,9 @@ const Detail = (props) => {
             Add to cart
           </button>
         </div>
-        <div className="font-custom flex justify-center mt-2 text-2xl ">
+        {/* <div className="font-custom flex justify-center mt-2 text-2xl ">
           {error}
-        </div>
+        </div> */}
       </div>
     </div>
   );

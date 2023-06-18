@@ -1,11 +1,11 @@
 import { useSelector, useDispatch } from "react-redux";
 import { uiActions } from "../../store/ui-slice";
-import { counterActions } from "../../store/cart-slice";
 import { Link } from "react-router-dom";
 import logo from "./../../assets/logo2.png";
 import user from "./../../assets/user.png";
 import cart from "./../../assets/cart.png";
 import styles from "./Index.module.css";
+import Cart from "./../../UI/Cart";
 
 const Index = () => {
   const dispatch = useDispatch();
@@ -17,7 +17,6 @@ const Index = () => {
     console.log("Hi from the toggle button");
     dispatch(uiActions.toggle());
   };
-
   return (
     <div>
       <div className={styles.container}>
@@ -58,30 +57,14 @@ const Index = () => {
       {toggle && (
         <div className={styles.carts}>
           {cartItems.map((item) => (
-            <div key={item.id} className={styles.cart}>
-              <div className={styles.fooddetail}>
-                <div>
-                  <p>{item.name}</p>
-                </div>
-                <div>
-                  ₹ {item.totalPrice}
-                  <p>(₹ {item.price} )</p>
-                </div>
-              </div>
-              <div className={styles.fooddetails}>
-                <div>
-                  <p>X{item.quantity}</p>
-                </div>
-                <div className="flex items-center">
-                  <div className="ml-[22px] mr-[22px]">
-                    <button className={styles.btn}>-</button>
-                  </div>
-                  <div>
-                    <button className={styles.btn}>+</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Cart
+              id={item.id}
+              key={item.id}
+              name={item.name}
+              price={item.price}
+              quantity={item.quantity}
+              totalPrice={item.totalPrice}
+            />
           ))}
         </div>
       )}

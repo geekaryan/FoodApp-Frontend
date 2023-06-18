@@ -1,0 +1,136 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.img{
+    margin-left: 32px;
+}
+
+.userProfile{
+    margin-right: 32px;
+}
+
+.text{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 41px;
+
+    color: #000000;
+}
+
+.userDetail{
+   margin-bottom: 24px;
+}
+
+.secondFlex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+    margin-right: 12px;
+}
+
+.cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-bottom: 1px solid #F52222;
+    padding-bottom: 22px;
+    padding-top: 22px;
+    margin-bottom: 32px;
+}
+
+.carts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+.price{
+    display: flex;
+    align-items: center;
+    justify-content: space-between !important;
+    margin-top: 32px;
+    
+}
+
+.fooddetail{
+    display: flex;
+    align-items: center;
+    gap: 400px;
+    margin-bottom: 20px;
+}
+.fooddetails{
+    display: flex;
+    align-items: center;
+    gap: 380px;
+    margin-left: 12px;
+}
+
+.btn{
+    background: #E82C20;
+    border-radius: 40px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 16px;
+    padding-right: 16px;
+    color: white;
+}
+
+@media only screen and (max-width: 1000px){
+   .fooddetail{
+    gap: 300px;
+   }
+   .fooddetails{
+    gap: 280px;
+   }
+   .cart{
+    margin-left: 20%;
+    margin-right: 20%;
+   }
+}
+
+
+@media only screen and (min-width: 768px){
+    .secondFlex{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .container{
+        display: none;
+    }
+    .img{
+        height: 100px;
+        width: 90px;
+    }
+    .cart{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .fooddetail{
+        gap: 200px;
+    }
+    .fooddetail{
+        gap: 180px;
+    }
+}
