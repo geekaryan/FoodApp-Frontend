@@ -17,6 +17,7 @@ const Card = (props) => {
       })
     );
   };
+  //portal fucntioning is going to add soon
   return (
     <div className={styles.carts}>
       <div key={id} className={styles.cart}>
