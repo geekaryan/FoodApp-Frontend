@@ -5,6 +5,7 @@ import logo from "./../../assets/logo2.png";
 import user from "./../../assets/user.png";
 import cart from "./../../assets/cart.png";
 import styles from "./Index.module.css";
+import homestyle from "./../Home/Header.module.css";
 import Cart from "./../../UI/Cart";
 
 const Index = () => {
@@ -27,7 +28,7 @@ const Index = () => {
         </Link>
 
         <div className={styles.flex}>
-          <div className={styles.text}>
+          <div className={homestyle.text}>
             <h1>Order</h1>
           </div>
           <div className={styles.text} style={{ display: "flex" }}>
@@ -38,7 +39,7 @@ const Index = () => {
               <p>{cartQuantity}</p>
             </div>
           </div>
-          <div className={styles.text}>
+          <div className={homestyle.text}>
             <h1>Menu</h1>
           </div>
           <div className={styles.userProfile}>
