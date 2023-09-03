@@ -8,6 +8,7 @@ import styles from "./Index.module.css";
 import homestyle from "./../Home/Header.module.css";
 import Cart from "./../../UI/Cart";
 
+//so this function is bassicaly use to dipatch the action by redux toolkit -------> moving towards redux toolkit
 const Index = () => {
   const dispatch = useDispatch();
   const toggle = useSelector((state) => state.ui.cartIsVisible);
