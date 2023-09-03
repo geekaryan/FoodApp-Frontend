@@ -77,4 +77,6 @@ const Index = () => {
 
 //newtork checking test two is it working
 
+//scam by network
+
 export default Index;
