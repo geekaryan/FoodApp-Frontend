@@ -73,4 +73,6 @@ const Index = () => {
   );
 };
 
+//netwok checking for regisyratino
+
 export default Index;
