@@ -75,4 +75,6 @@ const Index = () => {
 
 //netwok checking for regisyratino
 
+//newtork checking test two is it working
+
 export default Index;
