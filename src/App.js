@@ -8,6 +8,10 @@ import RootLayout from "./pages/Root";
 import LoginPage from "./pages/LoginPage";
 import AboutPage from "./pages/Aboutpage";
 import MobileTest from "./pages/Mobiletest";
+// import { useState, useEffect } from "react";
+// import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
+
+//Adding a Loading screen for 3 sec before opening the application (done)
 
 const router = createBrowserRouter([
   {
@@ -55,6 +59,17 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
+  // const [loading, isLoading] = useState(true);
+
+  // useEffect(() => {
+  //   const loadingTimeout = setTimeout(() => {
+  //     isLoading(false);
+  //   }, 3000);
+  //   return () => {
+  //     clearTimeout(loadingTimeout);
+  //   };
+  // }, []);
+
   return <RouterProvider router={router} />;
 };
 
