@@ -2,6 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: black !important;
+    height: 100vh;
 }
 
 .hidden{

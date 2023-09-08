@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@chakra-ui/react": "^2.5.5",
+    "@chakra-ui/react": "^2.8.0",
     "@chakra-ui/spinner": "^2.0.12",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.14.8",
+    "@mui/styled-engine-sc": "^5.14.8",
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -21,6 +23,7 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.8.2",
     "react-scripts": "5.0.1",
+    "styled-components": "^6.0.7",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
