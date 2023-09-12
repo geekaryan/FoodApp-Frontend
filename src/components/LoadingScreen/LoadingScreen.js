@@ -39,3 +39,7 @@ const LoadingScreen = () => {
 };
 
 export default LoadingScreen;
+
+//Task to be completed
+// → Going to fix cart
+// → Fixing margin in mobile app view
