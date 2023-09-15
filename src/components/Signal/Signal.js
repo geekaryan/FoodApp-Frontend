@@ -7,10 +7,10 @@ const Signal = () => {
       <div>
         <img src={NoInternet} alt="No Internet" />
       </div>
-      <div className={styles.noConnection}>
+      <div className="font-custom font-bold text-xl">
         <p>No Internet Connection</p>
       </div>
-      <div className={styles.longText}>
+      <div className="font-custom">
         <p>
           Your internet connection is currently not available please check or
           try again.
