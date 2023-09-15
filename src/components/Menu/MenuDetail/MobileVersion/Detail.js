@@ -2,7 +2,7 @@
 import { useCookies } from "react-cookie";
 import { useDispatch, useSelector } from "react-redux";
 import { counterActions } from "../../../../store/cart-slice";
-import { sumActions } from "../../../../store/counter-slice";
+// import { sumActions } from "../../../../store/counter-slice";
 
 import burger from "./../../../../assets/mobileburgerimage.png";
 import styles from "./Detail.module.css";
@@ -44,12 +44,13 @@ const Detail = (props) => {
   //   }
   // };
 
-  const incrementHandler = () => {
-    dispatch(sumActions.increment());
-  };
-  const decrementHandler = () => {
-    dispatch(sumActions.decrement());
-  };
+  // ---> 15-09-2023 i have just commented it Don't know the reason yet!!
+  // const incrementHandler = () => {
+  //   dispatch(sumActions.increment());
+  // };
+  // const decrementHandler = () => {
+  //   dispatch(sumActions.decrement());
+  // };
 
   const addToHanlder = () => {
     dispatch(
