@@ -9,7 +9,7 @@ import RootLayout from "./pages/Root";
 import LoginPage from "./pages/LoginPage";
 import AboutPage from "./pages/Aboutpage";
 import MobileTest from "./pages/Mobiletest";
-import Signal from "./components/Signal/Signal";
+import NoSignal from "./pages/NoSignal";
 
 const router = createBrowserRouter([
   {
@@ -63,7 +63,7 @@ const App = () => {
         <RouterProvider router={router} />
       </Online>
       <Offline>
-        <Signal />
+        <NoSignal />
       </Offline>
     </>
   );

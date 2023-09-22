@@ -7,7 +7,7 @@ const Signal = () => {
       <div>
         <img src={NoInternet} alt="No Internet" />
       </div>
-      <div className="font-custom font-bold text-xl">
+      <div className="font-custom font-bold text-xl mt-[12px]">
         <p>No Internet Connection</p>
       </div>
       <div className="font-custom">
