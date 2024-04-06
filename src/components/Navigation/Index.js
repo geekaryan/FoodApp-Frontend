@@ -6,7 +6,9 @@ import user from "./../../assets/user.png";
 import cart from "./../../assets/cart.png";
 import styles from "./Index.module.css";
 import homestyle from "./../Home/Header.module.css";
-import Cart from "./../../UI/Cart";
+import Cart from "./../../UI/Cart";\
+
+//BACK TO DEVELOPMENT BOYSS
 
 //so this function is bassicaly use to dipatch the action by redux toolkit -------> moving towards redux toolkit
 const Index = () => {
