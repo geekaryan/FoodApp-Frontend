@@ -8,7 +8,7 @@ import styles from "./Index.module.css";
 import homestyle from "./../Home/Header.module.css";
 import Cart from "./../../UI/Cart";\
 
-//BACK TO DEVELOPMENT BOYSS
+//BACK TO DEVELOPMENT BOYSS //dind't do anything
 
 //so this function is bassicaly use to dipatch the action by redux toolkit -------> moving towards redux toolkit
 const Index = () => {
