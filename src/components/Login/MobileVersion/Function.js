@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { authActions } from "../../../store/auth-slice";
 import styles from "./Function.module.css";
 import google from "./../../../assets/google.png";
 import twitter from "./../../../assets/twitter.png";
@@ -10,6 +12,8 @@ const Function = () => {
   const styleChanger = () => {
     setLogin(!login);
   };
+
+  const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
@@ -31,8 +35,14 @@ const Function = () => {
       });
 
       const data = await response.json();
+      console.log("From here data is coming");
       console.log(data);
-      navigate("/");
+      if (data.status === "success") {
+        navigate("/");
+        dispatch(authActions.logged());
+      } else {
+        alert("Please Enter valid details");
+      }
     } catch (e) {
       console.log(e.message);
     }

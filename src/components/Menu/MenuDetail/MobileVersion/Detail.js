@@ -3,6 +3,7 @@ import { useCookies } from "react-cookie";
 import { useDispatch, useSelector } from "react-redux";
 import { counterActions } from "../../../../store/cart-slice";
 // import { sumActions } from "../../../../store/counter-slice";
+import { useNavigate } from "react-router-dom";
 
 import burger from "./../../../../assets/mobileburgerimage.png";
 import styles from "./Detail.module.css";
@@ -13,9 +14,13 @@ const Detail = (props) => {
   const dispatch = useDispatch();
   const showcounter = useSelector((state) => state.sum.counter);
   console.log(showcounter);
+  const auth = useSelector((state) => state.auth.login);
+  console.log("Mobile version auth token", auth);
 
   const [cookies] = useCookies(["jwt", "name"]);
   console.log(cookies.jwt);
+
+  const navigate = useNavigate();
 
   // const buyHandler = async () => {
   //   try {
@@ -60,6 +65,10 @@ const Detail = (props) => {
         price: props.price,
       })
     );
+  };
+
+  const movetoLoginHandler = () => {
+    navigate("/register");
   };
   return (
     <div>
@@ -106,14 +115,25 @@ const Detail = (props) => {
           </button>
         </div>
       </div> */}
-      <div className="flex justify-center mt-[22px]">
-        <button
-          onClick={addToHanlder}
-          className="border-solid border-2 border-black pt-[12px] pb-[12px] px-[32px] py-[32px] bg-yellow-300 hover:bg-white font-custom"
-        >
-          Add to cart
-        </button>
-      </div>
+      {auth ? (
+        <div className="flex justify-center mt-[22px]">
+          <button
+            onClick={addToHanlder}
+            className="border-solid border-2 border-black pt-[12px] pb-[12px] px-[32px] py-[32px] bg-yellow-300 hover:bg-white font-custom"
+          >
+            Add to cart
+          </button>
+        </div>
+      ) : (
+        <div className="flex justify-center mt-[22px]">
+          <button
+            onClick={movetoLoginHandler}
+            className="border-solid border-2 border-black pt-[12px] pb-[12px] px-[32px] py-[32px] bg-yellow-300 hover:bg-white font-custom"
+          >
+            Add to cart
+          </button>
+        </div>
+      )}
     </div>
   );
 };

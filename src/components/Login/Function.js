@@ -3,9 +3,14 @@ import styles from "./Function.module.css";
 import google from "./../../assets/google.png";
 import twitter from "./../../assets/twitter.png";
 import fb from "./../../assets/fb.png";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { authActions } from "../../store/auth-slice";
 
 const Function = () => {
   const [login, setLogin] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   //s represents singup
   //l represents login
@@ -37,7 +42,12 @@ const Function = () => {
     });
 
     const data = await response.json();
-    console.log(data);
+    if (data.status === "success") {
+      navigate("/");
+      dispatch(authActions.logged());
+    } else {
+      alert("Please Enter valid details");
+    }
   };
 
   const SingupButtonHandler = async () => {

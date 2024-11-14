@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { counterActions } from "../../../store/cart-slice";
 // import { sumActions } from "../../../store/counter-slice";
 import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 // import { useState } from "react";
 
@@ -17,8 +18,10 @@ const Detail = (props) => {
   const dispatch = useDispatch();
   const counter = useSelector((state) => state.sum.counter);
   console.log(counter);
+  const auth = useSelector((state) => state.auth.login);
+  console.log("what my auth currently holds", auth);
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   // const num = data.name;
   // console.log
@@ -57,6 +60,10 @@ const Detail = (props) => {
   //     navigate("/register");
   //   }
   // };
+
+  const movetoLoginHandler = () => {
+    navigate("/register");
+  };
 
   const addToHanlder = () => {
     dispatch(
@@ -132,12 +139,22 @@ const Detail = (props) => {
           </div>
         </div> */}
         <div className="mt-[34px] flex justify-center">
-          <button
-            onClick={addToHanlder}
-            className=" border-solid border-2 border-black pt-[12px] pb-[12px] px-[42px] py-[42px] rounded bg-yellow-300 hover:bg-white font-custom"
-          >
-            Add to cart
-          </button>
+          {auth ? (
+            <button
+              onClick={addToHanlder}
+              className=" border-solid border-2 border-black pt-[12px] pb-[12px] px-[42px] py-[42px] rounded bg-yellow-300 hover:bg-white font-custom"
+            >
+              Add to cart
+            </button>
+          ) : (
+            <button
+              onClick={movetoLoginHandler}
+              className=" border-solid border-2 border-black pt-[12px] pb-[12px] px-[42px] py-[42px] rounded bg-yellow-300 hover:bg-white font-custom"
+            >
+              {" "}
+              Add to cart
+            </button>
+          )}
         </div>
         {/* <div className="font-custom flex justify-center mt-2 text-2xl ">
           {error}
