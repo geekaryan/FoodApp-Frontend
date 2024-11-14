@@ -6,11 +6,8 @@ import user from "./../../assets/user.png";
 import cart from "./../../assets/cart.png";
 import styles from "./Index.module.css";
 import homestyle from "./../Home/Header.module.css";
-import Cart from "./../../UI/Cart";\
+import Cart from "./../../UI/Cart";
 
-//BACK TO DEVELOPMENT BOYSS //dind't do anything
-
-//so this function is bassicaly use to dipatch the action by redux toolkit -------> moving towards redux toolkit
 const Index = () => {
   const dispatch = useDispatch();
   const toggle = useSelector((state) => state.ui.cartIsVisible);
@@ -75,11 +72,5 @@ const Index = () => {
     </div>
   );
 };
-
-//netwok checking for regisyratino
-
-//newtork checking test two is it working
-
-//scam by network
 
 export default Index;
