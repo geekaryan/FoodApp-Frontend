@@ -7,6 +7,9 @@ const uiSlice = createSlice({
     toggle(state) {
       state.cartIsVisible = !state.cartIsVisible;
     },
+    toggleOff(state) {
+      state.cartIsVisible = false;
+    },
   },
 });
 
