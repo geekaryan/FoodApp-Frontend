@@ -1,7 +1,7 @@
 import { Offline, Online } from "react-detect-offline";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
-import Order from "./components/Order/Index";
+import Order from "./components/Navigation/Order/Index";
 import MenuPage from "./pages/Menupage";
 import MenuDetailpage, { loader as DeatilLoader } from "./pages/MenuDetailpage";
 import EventRootLayout from "./pages/EventRoot";

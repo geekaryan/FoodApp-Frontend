@@ -1,5 +1,5 @@
 import styles from "./Order.module.css";
-import OrderCard from "../../UI/OrderCard";
+import OrderCard from "../../../UI/OrderCard";
 
 const Order = () => {
   return (

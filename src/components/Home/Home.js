@@ -4,6 +4,7 @@ import LoadingScreen from "../LoadingScreen/LoadingScreen";
 import styles from "./Home.module.css";
 import Header from "./Header";
 import Main from "./Main";
+// import Navigation from "./../Navigation/Index";
 
 const Home = () => {
   const [loading, isLoading] = useState(true);
