@@ -14,7 +14,7 @@ const Index = () => {
   const toggle = useSelector((state) => state.ui.cartIsVisible);
   const cartQuantity = useSelector((state) => state.count.totalQuantity);
   const cartItems = useSelector((state) => state.count.items);
-  const [Dropdown, setDropdown] = useState(true);
+  const [Dropdown, setDropdown] = useState(false);
 
   const toggleHandler = () => {
     console.log("Hi from the toggle button");
