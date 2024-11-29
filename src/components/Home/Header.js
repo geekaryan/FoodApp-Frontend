@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import user from "./../../assets/user.png";
 import styles from "./Header.module.css";
 import logo from "./../../assets/logo.png";
@@ -8,6 +9,9 @@ import stys from "./../Navigation/Dropdown.module.css";
 
 const Header = () => {
   const [DropDown, setDropdown] = useState(false);
+
+  const name = useSelector((state) => state.user.name);
+  console.log(name);
 
   const showDropdownHandler = () => {
     setDropdown(!DropDown);

@@ -6,11 +6,13 @@ import fb from "./../../assets/fb.png";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { authActions } from "../../store/auth-slice";
+import { userActions } from "../../store/user-slice";
 
 const Function = () => {
   const [login, setLogin] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  let user;
 
   //s represents singup
   //l represents login
@@ -43,8 +45,11 @@ const Function = () => {
 
     const data = await response.json();
     if (data.status === "success") {
-      navigate("/");
+      user = data.data.user.name;
+      console.log(user);
+      dispatch(userActions.add(user));
       dispatch(authActions.logged());
+      navigate("/");
     } else {
       alert("Please Enter valid details");
     }
