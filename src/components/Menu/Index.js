@@ -7,6 +7,7 @@ import styles from "./Index.module.css";
 
 const Index = (props) => {
   console.log(props.data);
+
   return (
     <div>
       <div className={styles.srcDiv}>
