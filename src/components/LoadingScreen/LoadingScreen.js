@@ -1,7 +1,7 @@
 // import { Spinner } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import styles from "./LoadingScreen.module.css";
-import { CircularProgress } from "@mui/material";
+// import { CircularProgress } from "@mui/material";
 
 const LoadingScreen = () => {
   const [loading, isLoading] = useState(true);
@@ -30,9 +30,9 @@ const LoadingScreen = () => {
           size="xl"
         /> */}
 
-        <div className="ml-[42px]">
+        {/* <div className="ml-[42px]">
           <CircularProgress />
-        </div>
+        </div> */}
       </div>
     </div>
   );
