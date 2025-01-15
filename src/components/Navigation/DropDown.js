@@ -13,8 +13,7 @@ const DropDown = () => {
   const [cookies, removeCookie] = useCookies();
   const name = useSelector((state) => state.user.name);
   const isLogin = useSelector((state) => state.auth.login);
-
-  console.log(isLogin);
+  console.log("Is user Logged In", isLogin);
 
   const showCartHandler = () => {
     dispatch(uiActions.toggle());
@@ -30,6 +29,11 @@ const DropDown = () => {
     Object.keys(cookies).forEach((cookieName) => {
       removeCookie(cookieName);
     });
+    navigate("/");
+  };
+
+  const PlacedNavigation = () => {
+    navigate("/order");
   };
   return (
     <div className={styles.mainDiv}>
@@ -43,15 +47,17 @@ const DropDown = () => {
           <p>Cart</p>
         </div>
       ) : (
-        ""
+        <div className={styles.txt} onClick={PlacedNavigation}>
+          <p>Orders</p>
+        </div>
       )}
       {!isLogin ? (
         <div className={styles.txt} onClick={loginNavigation}>
           <p>Login</p>
         </div>
       ) : (
-        <div className={styles.txt} onClick={loginNavigation}>
-          <p>Orders</p>
+        <div className={styles.txt} onClick={showCartHandler}>
+          <p>Cart</p>
         </div>
       )}
       {!isLogin ? (

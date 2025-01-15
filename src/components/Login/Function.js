@@ -71,6 +71,9 @@ const Function = () => {
 
     const data = await response.json();
     console.log(data);
+    dispatch(userActions.add(user));
+    dispatch(authActions.logged());
+    navigate("/");
   };
   return (
     <div className={styles.container}>
