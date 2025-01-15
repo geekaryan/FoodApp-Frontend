@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 // import { Spinner } from "@chakra-ui/react";
 import burger from "./../../assets/burger.png";
@@ -11,7 +11,12 @@ const Index = (props) => {
 
   //adding the filtereing functionality so that user can filter out food items
   const [filteredData, setFilteredData] = useState([]);
+  const [data, setData] = useState([]);
   const [query, setQuery] = useState("");
+  // setData(props.data);
+  useEffect(() => {
+    setData(props.data);
+  }, [props.data]);
 
   const HandleInputData = (e) => {
     const value = e.target.value.toLowerCase().trim();
@@ -34,6 +39,7 @@ const Index = (props) => {
   console.log("props data checking", props);
 
   console.log("filtered data", filteredData);
+  console.log(data);
 
   return (
     <div>
@@ -56,22 +62,39 @@ const Index = (props) => {
           //   size="xl"
           // />
           ""}
-        {filteredData.map((menu) => {
-          return (
-            <div key={menu._id}>
-              <Link to={menu._id}>
-                <div className={styles.eachitem}>
-                  <div>
-                    <img src={burger} alt="burger" />
-                  </div>
-                  <div className={styles.everTexts}>{menu.name}</div>
+        {filteredData.length > 0
+          ? filteredData.map((menu) => {
+              return (
+                <div key={menu._id}>
+                  <Link to={menu._id}>
+                    <div className={styles.eachitem}>
+                      <div>
+                        <img src={burger} alt="burger" />
+                      </div>
+                      <div className={styles.everTexts}>{menu.name}</div>
 
-                  <div className={styles.everText}>₹ {menu.price}</div>
+                      <div className={styles.everText}>₹ {menu.price}</div>
+                    </div>
+                  </Link>
                 </div>
-              </Link>
-            </div>
-          );
-        })}
+              );
+            })
+          : data.map((menu) => {
+              return (
+                <div key={menu._id}>
+                  <Link to={menu._id}>
+                    <div className={styles.eachitem}>
+                      <div>
+                        <img src={burger} alt="burger" />
+                      </div>
+                      <div className={styles.everTexts}>{menu.name}</div>
+
+                      <div className={styles.everText}>₹ {menu.price}</div>
+                    </div>
+                  </Link>
+                </div>
+              );
+            })}
       </div>
     </div>
   );
