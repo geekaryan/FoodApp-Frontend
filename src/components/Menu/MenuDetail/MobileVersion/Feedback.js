@@ -16,7 +16,7 @@ const Feedback = () => {
             <span>Sam Wheaton</span>
           </div>
         </div>
-        <div className={styles.userText}>
+        <div className={` mb-2 ${styles.userText}`}>
           <span>
             I ordered the minced ham burger with green pepper and onion, and I
             was pleasantly surprised by how juicy and flavorful it was. The

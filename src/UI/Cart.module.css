@@ -95,18 +95,7 @@
     color: white;
 }
 
-@media only screen and (max-width: 1000px){
-   .fooddetail{
-    gap: 300px;
-   }
-   .fooddetails{
-    gap: 280px;
-   }
-   .cart{
-    margin-left: 20%;
-    margin-right: 20%;
-   }
-}
+
 
 
 @media only screen and (min-width: 768px){
@@ -124,13 +113,27 @@
         width: 90px;
     }
     .cart{
-        margin-left: 10%;
-        margin-right: 10%;
+        margin-left: 3%;
+        margin-right: 3%;
     }
     .fooddetail{
-        gap: 200px;
+        gap: 96px;
     }
-    .fooddetail{
-        gap: 180px;
+    .fooddetails{
+        gap: 44px;
     }
 }
+
+
+@media only screen and (min-width: 769px) and (max-width: 1000px){
+    .fooddetail{
+     gap: 160px;
+    }
+    .fooddetails{
+     gap: 120px;
+    }
+    .cart{
+     margin-left: 20%;
+     margin-right: 20%;
+    }
+ }

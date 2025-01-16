@@ -1,4 +1,3 @@
-import styles from "./Dropdown.module.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { uiActions } from "../../store/ui-slice";
@@ -6,6 +5,7 @@ import { authActions } from "../../store/auth-slice";
 import { userActions } from "../../store/user-slice";
 import { useSelector } from "react-redux";
 import { useCookies } from "react-cookie";
+import styles from "./Dropdown.module.css";
 
 const DropDown = () => {
   const navigate = useNavigate();
@@ -16,7 +16,11 @@ const DropDown = () => {
   console.log("Is user Logged In", isLogin);
 
   const showCartHandler = () => {
-    dispatch(uiActions.toggle());
+    if (isLogin === false) {
+      alert("Login First!");
+    } else {
+      dispatch(uiActions.toggle());
+    }
   };
 
   const loginNavigation = () => {
