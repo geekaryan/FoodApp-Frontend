@@ -16,7 +16,7 @@ const Placed = () => {
             }
             const data = await response.json();
             setData(data.data.orders);
-            totalPriceHandler();
+            // totalPriceHandler();
         }catch (err) {
             console.log(err);
     
@@ -24,6 +24,7 @@ const Placed = () => {
     };
     ApiHandler();
 }, []);
+useEffect(()=> {
     const totalPriceHandler = () => {
         const arr = [];
         for(let i=0;i<data.length;i++){
@@ -33,8 +34,12 @@ const Placed = () => {
         for(let i = 0;i<arr.length;i++){
         curr  += arr[i];
         }
+        console.log("curr price is", curr);
         setTotalPrice(curr);
     }
+    totalPriceHandler();
+},[data])
+    
     
 
     // console.log(data);
