@@ -13,6 +13,7 @@ const Function = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   let user;
+  let uid;
 
   //s represents singup
   //l represents login
@@ -46,8 +47,11 @@ const Function = () => {
     const data = await response.json();
     if (data.status === "success") {
       user = data.data.user.name;
+      uid = data.data.user._id;
       console.log(user);
+      console.log(uid);
       dispatch(userActions.add(user));
+      dispatch(userActions.adduid(uid));
       dispatch(authActions.logged());
       navigate("/");
     } else {
