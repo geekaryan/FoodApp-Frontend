@@ -1,8 +1,13 @@
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { counterActions } from "../store/cart-slice";
 import styles from "./Cart.module.css";
 
 const Card = (props) => {
+  const cartslice = useSelector((state) => state.count.items);
+  console.log(cartslice);
+  const uid = useSelector((state) => state.user.uid);
+  console.log(uid);
   const dispatch = useDispatch();
   const { name, price, quantity, totalPrice, id } = props;
   const removeItemHanlder = () => {
@@ -17,6 +22,7 @@ const Card = (props) => {
       })
     );
   };
+
   //portal fucntioning is going to add soon
   return (
     <div className={styles.carts}>
@@ -53,3 +59,6 @@ const Card = (props) => {
 };
 
 export default Card;
+
+//now there is thing i have to change the schema of orders
+//orders include a customer_id and items he had bss toh items ka ek array send krunga

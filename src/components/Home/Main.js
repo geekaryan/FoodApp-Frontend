@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Slider from "./../../UI/Coursel";
+import Slider from "../../UI/Coursel";
 // import arrow from "./../../assets/arrow.png";
 import styles from "./Main.module.css";
 // import chef1 from "./../../assets/chef.png";
