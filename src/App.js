@@ -10,7 +10,6 @@ import LoginPage from "./pages/LoginPage";
 import AboutPage from "./pages/Aboutpage";
 import MobileTest from "./pages/Mobiletest";
 import NoSignal from "./pages/NoSignal";
-
 const router = createBrowserRouter([
   {
     path: "/",
