@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { counterActions } from "../../../store/cart-slice";
+import { placedActions } from "../../../store/placed-slice";
 // import { sumActions } from "../../../store/counter-slice";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
@@ -9,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import burger from "./../../../assets/burgerdetail.png";
 import styles from "./Detail.module.css";
+import { useState } from "react";
 
 const Detail = (props) => {
   const [cookies] = useCookies(["jwt", "name"]);
@@ -19,7 +21,7 @@ const Detail = (props) => {
   const counter = useSelector((state) => state.sum.counter);
   console.log(counter);
   const auth = useSelector((state) => state.auth.login);
-  console.log("what my auth currently holds", auth);
+  // console.log("what my auth currently holds", auth);
 
   const navigate = useNavigate();
 
@@ -61,6 +63,16 @@ const Detail = (props) => {
   //   }
   // };
 
+  console.log("Menu detail page console", props);
+
+  const uid = useSelector((state) => state.user.uid);
+  const items = useSelector((state) => state.placed.items);
+  const quantity = useSelector((state) => state.placed.quantity);
+  const price = useSelector((state) => state.placed.price);
+  const [updateItems, setUpdateItems] = useState([]);
+  const [updateQuantity, setUpdateQuantity] = useState([]);
+  const [updatePrice, setUpdatePrice] = useState([]);
+
   const movetoLoginHandler = () => {
     navigate("/register");
   };
@@ -73,6 +85,25 @@ const Detail = (props) => {
         price: props.price,
       })
     );
+
+    //here i have to add my 2nd add to handler
+    const updatedItems = [...items, props.id];
+    const updatedQuantity = [...quantity, 1];
+    const updatedPrice = [...price, props.price];
+
+    setUpdateItems(updatedItems);
+    setUpdateQuantity(updatedQuantity);
+    setUpdatePrice(updatedPrice);
+
+    dispatch(
+      placedActions.placeOrder({
+        customer_id: uid,
+        items: updateItems,
+        quantity: updateQuantity,
+        price: updatePrice,
+      })
+    );
+    console.log("data is sent successfully");
   };
   return (
     <div className={styles.container}>

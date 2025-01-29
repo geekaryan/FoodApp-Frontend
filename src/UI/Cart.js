@@ -6,6 +6,14 @@ import styles from "./Cart.module.css";
 const Card = (props) => {
   const cartslice = useSelector((state) => state.count.items);
   console.log(cartslice);
+  const placedSlicecustomer = useSelector((state) => state.placed.customer_id);
+  const placedSliceitems = useSelector((state) => state.placed.items);
+  const placedSlicequantity = useSelector((state) => state.placed.quantity);
+  const placedSliceprice = useSelector((state) => state.placed.price);
+  console.log("I am form placedSlice", placedSlicecustomer);
+  console.log("I am from placedSlice", placedSliceitems);
+  console.log("I am from placedSlice", placedSlicequantity);
+  console.log("I am from placedSlice", placedSliceprice);
   const uid = useSelector((state) => state.user.uid);
   console.log(uid);
   const dispatch = useDispatch();
@@ -53,6 +61,11 @@ const Card = (props) => {
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <button className="bg-slate-200 rounded-md pt-2 pb-2 pl-2 pr-2 hover:bg-blue-500">
+          Place Order
+        </button>
       </div>
     </div>
   );

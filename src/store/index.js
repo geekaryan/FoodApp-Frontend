@@ -4,6 +4,7 @@ import counterSlice from "./cart-slice";
 import sumSlice from "./counter-slice";
 import authSlice from "./auth-slice";
 import userSlice from "./user-slice";
+import placedSlice from "./placed-slice";
 
 //we have three slice in here
 // the ui slice is used to enable and disable ui on touch
@@ -17,6 +18,7 @@ const store = configureStore({
     sum: sumSlice.reducer,
     auth: authSlice.reducer,
     user: userSlice.reducer,
+    placed: placedSlice.reducer,
   },
 });
 
