@@ -22,6 +22,8 @@ const Card = (props) => {
   const { name, price, quantity, totalPrice, id } = props;
   const removeItemHanlder = () => {
     dispatch(counterActions.removeItemFromCart(id));
+    dispatch(placedActions.removeOrder(id));
+    console.log("Item must be removed");
   };
 
   const updatedItems = [...items];

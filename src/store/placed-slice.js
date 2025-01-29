@@ -32,6 +32,8 @@
 
 // export default placedSlice;
 
+//now I have to work on the remove order functinality
+
 import { createSlice } from "@reduxjs/toolkit";
 
 const placedSlice = createSlice({
@@ -49,6 +51,17 @@ const placedSlice = createSlice({
       state.items = items;
       state.quantity = quantity;
       state.price = price;
+    },
+    removeOrder(state, action) {
+      const existingIndex = state.items.indexOf(action.payload);
+      if (state.quantity[existingIndex] > 0) {
+        state.quantity[existingIndex]--;
+        if (state.quantity[existingIndex] === 0) {
+          state.items.splice(existingIndex, 1);
+          state.quantity.splice(existingIndex, 1);
+          state.price.splice(existingIndex, 1);
+        }
+      }
     },
   },
 });
