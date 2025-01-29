@@ -2,31 +2,55 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { counterActions } from "../store/cart-slice";
 import styles from "./Cart.module.css";
+import { placedActions } from "../store/placed-slice";
 
 const Card = (props) => {
   const cartslice = useSelector((state) => state.count.items);
   console.log(cartslice);
-  const placedSlicecustomer = useSelector((state) => state.placed.customer_id);
-  const placedSliceitems = useSelector((state) => state.placed.items);
-  const placedSlicequantity = useSelector((state) => state.placed.quantity);
-  const placedSliceprice = useSelector((state) => state.placed.price);
-  console.log("I am form placedSlice", placedSlicecustomer);
-  console.log("I am from placedSlice", placedSliceitems);
-  console.log("I am from placedSlice", placedSlicequantity);
-  console.log("I am from placedSlice", placedSliceprice);
   const uid = useSelector((state) => state.user.uid);
+  const items = useSelector((state) => state.placed.items);
+  const quantitys = useSelector((state) => state.placed.quantity);
+  const prices = useSelector((state) => state.placed.price);
+
+  console.log("This is the cart", uid);
+  console.log("This is the cart", items);
+  console.log("This is the cart", quantitys);
+  console.log("This is the cart", prices);
+
   console.log(uid);
   const dispatch = useDispatch();
   const { name, price, quantity, totalPrice, id } = props;
   const removeItemHanlder = () => {
     dispatch(counterActions.removeItemFromCart(id));
   };
+
+  const updatedItems = [...items];
+  const updatedQuantity = [...quantitys];
+  const updatedPrice = [...prices];
   const addItemHandler = () => {
     dispatch(
       counterActions.addItemToCart({
         id,
         title: name,
         price,
+      })
+    );
+
+    const existingItem = updatedItems.findIndex((i) => i === id);
+    if (existingItem !== -1) {
+      updatedQuantity[existingItem] += 1;
+    } else {
+      updatedItems.push(id);
+      updatedQuantity.push(1);
+      updatedPrice.push(price);
+    }
+
+    dispatch(
+      placedActions.placeOrder({
+        customer_id: uid,
+        items: updatedItems,
+        quantity: updatedQuantity,
+        price: updatedPrice,
       })
     );
   };
