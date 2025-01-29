@@ -10,7 +10,6 @@ import { useNavigate } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import burger from "./../../../assets/burgerdetail.png";
 import styles from "./Detail.module.css";
-import { useState } from "react";
 
 const Detail = (props) => {
   const [cookies] = useCookies(["jwt", "name"]);
@@ -69,13 +68,14 @@ const Detail = (props) => {
   const items = useSelector((state) => state.placed.items);
   const quantity = useSelector((state) => state.placed.quantity);
   const price = useSelector((state) => state.placed.price);
-  const [updateItems, setUpdateItems] = useState([]);
-  const [updateQuantity, setUpdateQuantity] = useState([]);
-  const [updatePrice, setUpdatePrice] = useState([]);
 
   const movetoLoginHandler = () => {
     navigate("/register");
   };
+
+  const updatedItems = [...items];
+  const updatedQuantity = [...quantity];
+  const updatedPrice = [...price];
 
   const addToHanlder = () => {
     dispatch(
@@ -87,20 +87,22 @@ const Detail = (props) => {
     );
 
     //here i have to add my 2nd add to handler
-    const updatedItems = [...items, props.id];
-    const updatedQuantity = [...quantity, 1];
-    const updatedPrice = [...price, props.price];
 
-    setUpdateItems(updatedItems);
-    setUpdateQuantity(updatedQuantity);
-    setUpdatePrice(updatedPrice);
+    const existingItem = updatedItems.findIndex((i) => i === props.id);
+    if (existingItem !== -1) {
+      updatedQuantity[existingItem] += 1;
+    } else {
+      updatedItems.push(props.id);
+      updatedQuantity.push(1);
+      updatedPrice.push(props.price);
+    }
 
     dispatch(
       placedActions.placeOrder({
         customer_id: uid,
-        items: updateItems,
-        quantity: updateQuantity,
-        price: updatePrice,
+        items: updatedItems,
+        quantity: updatedQuantity,
+        price: updatedPrice,
       })
     );
     console.log("data is sent successfully");

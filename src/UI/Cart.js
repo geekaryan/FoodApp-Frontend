@@ -75,3 +75,5 @@ export default Card;
 
 //now there is thing i have to change the schema of orders
 //orders include a customer_id and items he had bss toh items ka ek array send krunga
+
+//now next thing is I have to add to my backend only the rest of process is done
