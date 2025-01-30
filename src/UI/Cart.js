@@ -57,6 +57,24 @@ const Card = (props) => {
     );
   };
 
+  const placedOrderHandler = async () => {
+    try {
+      //here I have to write a post request
+      const response = await fetch("/api/orders", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          customer_id: uid,
+          order: [(items: items), (quantity: quantitys), (price: prices)],
+        }),
+      });
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+
   //portal fucntioning is going to add soon
   return (
     <div className={styles.carts}>
