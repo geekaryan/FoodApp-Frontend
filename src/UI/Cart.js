@@ -67,9 +67,10 @@ const Card = (props) => {
         },
         body: JSON.stringify({
           customer_id: uid,
-          order: [(items: items), (quantity: quantitys), (price: prices)],
+          order: [{ items, quantity: quantitys, price: prices }],
         }),
       });
+      console.log(response);
     } catch (e) {
       console.log(e.message);
     }
@@ -107,7 +108,10 @@ const Card = (props) => {
         </div>
       </div>
       <div>
-        <button className="bg-slate-200 rounded-md pt-2 pb-2 pl-2 pr-2 hover:bg-blue-500">
+        <button
+          onClick={placedOrderHandler}
+          className="bg-slate-200 rounded-md pt-2 pb-2 pl-2 pr-2 hover:bg-blue-500"
+        >
           Place Order
         </button>
       </div>
