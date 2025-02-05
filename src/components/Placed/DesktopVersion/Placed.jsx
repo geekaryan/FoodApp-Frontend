@@ -21,7 +21,8 @@ const Placed = () => {
                 console.log("Api is not working properly");
             }
             const data = await response.json();
-            setData(data.data.orders);
+            // console.log(data.data.orders[0].order);
+            setData(data.data.orders[0].order);
             // totalPriceHandler();
         }catch (err) {
             console.log(err);
@@ -45,10 +46,26 @@ useEffect(()=> {
     }
     totalPriceHandler();
 },[data])
+
+let name = "";
+
+const getItemNameHandler =  async (val) => {
+    try{
+        const response = await fetch(`/api/menu/${val}`);
+        const data = await response.json();
+        name = data.menuItem.name;
+    }catch(er){
+        console.log(er);
+    }
+   
+
+
+}
+
     
     
 
-    // console.log(data);
+    console.log(data);
     return(
         <div>
             <Navigation />
@@ -58,14 +75,24 @@ useEffect(()=> {
         </div>
         <div className="flex flex-col items-center mt-3">
          <div className="flex flex-col items-center">
-            {data.map((item) => {
-                return(
-                    <div className="bg-slate-100 pt-2 pr-4 pl-4 pb-2 mb-2" key={item.key}>
-                      <h1 className="text-[18px]" >Your item is: {item.name}</h1> 
-                      <h1 className="text-[18px]" >Your item price: {item.price}</h1> 
-                    </div>
-                )
-            })}
+         {data.map((order, orderIndex) => {
+            return(
+                <div  key={orderIndex} className="mb-6">
+                    {order.items.map((item, index)=>(
+                        <div key={index}>
+                            <p>{item}</p>
+                            <p>{order.quantity[index]}</p>
+                            <p>{order.price[index]}</p>
+
+                        </div>
+                    ))}
+
+                </div>
+            )
+           })}
+
+
+
            </div>
            <div className="mt-4 text-xl">
            <h1>Your total price is : {totalPrice}</h1> 
